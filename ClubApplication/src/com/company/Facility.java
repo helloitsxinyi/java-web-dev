@@ -14,11 +14,16 @@ public class Facility {
     }
 
     public void show() {
+        System.out.println(toString());
+    }
+
+    @Override
+    public String toString() {
         String text = name;
         if (description != null) {
             text += " (" + description + ")";
         }
-        System.out.println(text);
+        return text;
     }
 
     public String getName() {
