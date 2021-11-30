@@ -8,14 +8,14 @@ public class Member extends Person {
         this.memberNumber = memberNumber;
     }
 
-    public int getMemberNumber() {
-        return memberNumber;
-    }
-
     @Override
     public String toString() {
         String text = super.toString() + " " + memberNumber;
         return text;
+    }
+
+    public int getMemberNumber() {
+        return memberNumber;
     }
 
 }

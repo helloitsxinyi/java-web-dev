@@ -2,8 +2,10 @@ package com.company;
 
 public class ClubApplication {
     public static void main(String[] args) {
-        Person p1, p2, p3, m1;
+        Person p1, p2, p3;
         Facility fac1, fac2, fac3;
+        Member m1, m2, m3;
+        Club c;
 
 
         p1 = new Person ("Edison", "Thomas", "Alva");
@@ -14,7 +16,13 @@ public class ClubApplication {
         fac2 = new Facility ("Room1", "Conference Room on Level 2");
         fac3 = new Facility ("Room2", "Meeting Room on Level 3");
 
-        m1 = new Member("Tan", "Ah", "Beng", 123);
+        m1 = new Member("Handelwood", "Hazel", "Anna", 234);
+
+        c = new Club();
+
+        c.addMember("Tan", "Ah", "Beng");
+        c.addMember("Lint", "Linda", null);
+        Member[] members = c.getMembers();
 
         System.out.println ("People:");
         p1.show();
@@ -26,6 +34,9 @@ public class ClubApplication {
         fac3.show ();
         System.out.println ("\nMembers:");
         m1.show();
+        for (Member mem : members) {
+            mem.show();
+        }
 
 
     }
