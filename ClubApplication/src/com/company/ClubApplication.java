@@ -22,6 +22,9 @@ public class ClubApplication {
 
         c.addMember("Tan", "Ah", "Beng");
         c.addMember("Lint", "Linda", null);
+        c.addMember("Hoon", "Jongwon", "Daniel");
+        c.addMember("Brown", "Jerry", null);
+
         Member[] members = c.getMembers();
 
         System.out.println ("People:");
@@ -34,6 +37,9 @@ public class ClubApplication {
         fac3.show ();
         System.out.println ("\nMembers:");
         m1.show();
+        c.showMembers();
+        c.removeMember(2);
+        c.removeMember(3);
         c.showMembers();
 
 
