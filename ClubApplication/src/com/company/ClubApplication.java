@@ -34,9 +34,8 @@ public class ClubApplication {
         fac3.show ();
         System.out.println ("\nMembers:");
         m1.show();
-        for (Member mem : members) {
-            mem.show();
-        }
+        c.showMembers();
+
 
 
     }
