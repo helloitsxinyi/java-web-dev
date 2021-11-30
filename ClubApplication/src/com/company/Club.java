@@ -60,6 +60,18 @@ public class Club {
     }
 
     public void removeMember(int membershipNumber) {
-        members.removeIf(member -> member.getMemberNumber() == membershipNumber);
+//        //simple iterator method
+//        members.removeIf(member -> member.getMemberNumber() == membershipNumber);
+        int index = members.indexOf(findMember(membershipNumber));
+        members.remove(index);
+    }
+
+    public Member findMember(int membershipNumber) {
+        for (Member mem: members) {
+            if (mem.getMemberNumber() == membershipNumber) {
+                return mem;
+            }
+        }
+        return null;
     }
 }
