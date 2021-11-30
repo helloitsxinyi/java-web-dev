@@ -36,7 +36,8 @@ public class Club {
 
     public void removeMember(int membershipNumber) {
         int memNo = 0;
-        // to get the index of member to be removed, as this always changes after addition/deletion
+        // to get the index of member to be removed,
+        // as this always changes after addition/deletion
         for (int i = 0; i < members.length; i++) {
             if (members[i].getMemberNumber() == membershipNumber) {
                 memNo = i;
