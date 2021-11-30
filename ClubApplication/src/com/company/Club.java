@@ -33,15 +33,15 @@ public class Club {
 //    }
 //
 //    public void removeMember(int membershipNumber) {
-//        int memNo = 0;
+//        int index = 0;
 //        // to get the index of member to be removed,
 //        // as this always changes after addition/deletion
 //        for (int i = 0; i < members.length; i++) {
 //            if (members[i].getMemberNumber() == membershipNumber) {
-//                memNo = i;
+//                index = i;
 //            }
 //        }
-//        for (int i = memNo; i < members.length - 1; i++) {
+//        for (int i = index; i < members.length - 1; i++) {
 //            members[i] = members[i+1];
 //        }
 //        members = Arrays.copyOf(members, members.length - 1);
@@ -58,5 +58,6 @@ public class Club {
         membershipNumber += 1;
         members.add(new Member(surname, firstName, secondName, membershipNumber));
     }
+
 
 }
