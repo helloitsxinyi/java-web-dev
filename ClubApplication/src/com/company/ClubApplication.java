@@ -27,6 +27,7 @@ public class ClubApplication {
         c.addMember("Hoon", "Jongwon", "Daniel");
         c.addMember("Brown", "Jerry", null);
 
+//        Member[] members = c.getMembers();
         List<Member> members = c.getMembers();
 
         System.out.println ("People:");
@@ -48,8 +49,10 @@ public class ClubApplication {
         c.removeMember(4);
         c.showMembers();
 
+        c.addFacility("Main Hall", null);
+        c.addFacility("Room1", "Conference Room on Level 2");
+        c.addFacility("Room2", "Meeting Room on Level 3");
 
-
-
+        c.show();
     }
 }
