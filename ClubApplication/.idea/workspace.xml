@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ce66d17d-d26f-4af8-bf0e-505b5fcf13b4" name="Changes" comment="remove comment about array in clubarraylist" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProjectId" id="21a7Bo0drVHOeX9sfhIXQNJ1uG6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled104" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.company" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.ClubApplication" />
+      <module name="Test" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="Test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce66d17d-d26f-4af8-bf0e-505b5fcf13b4" name="Changes" comment="" />
+      <created>1638167213639</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638167213639</updated>
+      <workItem from="1638167215097" duration="2871000" />
+      <workItem from="1638171245536" duration="5147000" />
+      <workItem from="1638245035828" duration="10757000" />
+    </task>
+    <task id="LOCAL-00001" summary="add ClubApplication class">
+      <created>1638167658908</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638167658908</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add facility, person classes, delete main class">
+      <created>1638172991334</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638172991335</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add member class and modify Facility.show and Person.show">
+      <created>1638175835592</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1638175835592</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add Club class and test methods to display members in club">
+      <created>1638252946261</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1638252946261</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add showMembers method in club and test">
+      <created>1638253728069</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1638253728069</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add removemember method with array resizing">
+      <created>1638255410483</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1638255410483</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update addMember method to change with removal of members, add tests in main">
+      <created>1638255901015</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1638255901015</updated>
+    </task>
+    <task id="LOCAL-00008" summary="===== LEARNING POINT: Arrays. See: Club.java and ClubApplication.java (Main) =====">
+      <created>1638256160118</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1638256160118</updated>
+    </task>
+    <task id="LOCAL-00009" summary="===== LEARNING POINT: Arrays. See: Club.java and ClubApplication.java (Main) [rearranged code] =====">
+      <created>1638256404932</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1638256404932</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update addMember method to use arrayList instead of array">
+      <created>1638256691895</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1638256691895</updated>
+    </task>
+    <task id="LOCAL-00011" summary="update naming of memNo to index for old removeMember method for clarity">
+      <created>1638256820698</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1638256820698</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update removeMember method to use arrayList instead of array, update tests in main">
+      <created>1638257187066</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1638257187066</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add findMember,update removeMember to use findMember">
+      <created>1638257406555</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1638257406555</updated>
+    </task>
+    <task id="LOCAL-00014" summary="split club into specific classes with naming to show data types">
+      <created>1638257977896</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1638257977896</updated>
+    </task>
+    <task id="LOCAL-00015" summary="clean up code">
+      <created>1638257995717</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1638257995717</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update explanation for club array code">
+      <created>1638259228230</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1638259228230</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add facility functions (showFac, removeFac, addFac, getFac, show) and test cases in main">
+      <created>1638261341247</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1638261341247</updated>
+    </task>
+    <task id="LOCAL-00018" summary="remove comment about array in clubarraylist">
+      <created>1638261366925</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1638261366925</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="add ClubApplication class" />
+    <MESSAGE value="add facility, person classes, delete main class" />
+    <MESSAGE value="add member class and modify Facility.show and Person.show" />
+    <MESSAGE value="add Club class and test methods to display members in club" />
+    <MESSAGE value="add showMembers method in club and test" />
+    <MESSAGE value="add removemember method with array resizing" />
+    <MESSAGE value="update addMember method to change with removal of members, add tests in main" />
+    <MESSAGE value="LEARNING POINT: Arrays. See: Club.java and ClubApplication.java (Main_" />
+    <MESSAGE value="===== LEARNING POINT: Arrays. See: Club.java and ClubApplication.java (Main) =====" />
+    <MESSAGE value="===== LEARNING POINT: Arrays. See: Club.java and ClubApplication.java (Main) [rearranged code] =====" />
+    <MESSAGE value="update addMember method to use arrayList instead of array" />
+    <MESSAGE value="update naming of memNo to index for old removeMember method for clarity" />
+    <MESSAGE value="update removeMember method to use arrayList instead of array, update tests in main" />
+    <MESSAGE value="add findMember,update removeMember to use findMember" />
+    <MESSAGE value="split club into specific classes with naming to show data types" />
+    <MESSAGE value="clean up code" />
+    <MESSAGE value="update explanation for club array code" />
+    <MESSAGE value="add facility functions (showFac, removeFac, addFac, getFac, show) and test cases in main" />
+    <MESSAGE value="remove comment about array in clubarraylist" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove comment about array in clubarraylist" />
+  </component>
+</project>
