@@ -41,6 +41,11 @@ public class ClubApplication {
         c.removeMember(2);
         c.removeMember(3);
         c.showMembers();
+        c.addMember("Lint", "Linda", null);
+        c.showMembers();
+        c.removeMember(4);
+        c.showMembers();
+
 
 
 

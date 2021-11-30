@@ -19,8 +19,11 @@ public class Club {
     public void addMember(String surname, String firstName, String secondName) {
         membershipNumber += 1;
         Member m = new Member(surname, firstName, secondName, membershipNumber);
-        members = Arrays.copyOf(members, membershipNumber);
-        members[membershipNumber-1] = m;
+        // now, array size may change due to removeMember.
+        // therefore important to assign new length as length of previous members array + 1,
+        // instead of just assigning the membership number.
+        members = Arrays.copyOf(members, members.length+1);
+        members[members.length-1] = m;
     }
 
     public void showMembers() {
