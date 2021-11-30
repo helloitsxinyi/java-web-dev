@@ -12,8 +12,6 @@ public class ClubArrayList {
     }
 
     public void showMembers() {
-        // in 3rd element will encounter NPE because array is initialized with null objects
-        // and 3rd element is null (only 1st and 2nd filled)
         for (Member mem : members) {
             mem.show();
         }
