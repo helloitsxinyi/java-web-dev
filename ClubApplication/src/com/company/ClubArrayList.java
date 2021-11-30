@@ -31,8 +31,7 @@ public class ClubArrayList {
     public void removeMember(int membershipNumber) {
 //        //simple iterator method
 //        members.removeIf(member -> member.getMemberNumber() == membershipNumber);
-        int index = members.indexOf(findMember(membershipNumber));
-        members.remove(index);
+        members.remove(findMember(membershipNumber));
     }
 
     public Member findMember(int membershipNumber) {
