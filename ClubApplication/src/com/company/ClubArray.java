@@ -12,6 +12,7 @@ public class ClubArray {
     }
 
     public void showMembers() {
+        // if just initialize array with size 20, and add only 2 elements through members[i] = elem;
         // in 3rd element will encounter NPE because array is initialized with null objects
         // and 3rd element is null (only 1st and 2nd filled)
         for (Member mem : members) {
