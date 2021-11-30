@@ -6,14 +6,18 @@ import java.util.Arrays;
 public class Club {
     private int membershipNumber = 0 ;
 
-    public Member[] getMembers() {
-        return members;
-    }
-
     // declare and instantiate null array (cos using member objects)
     private Member[] members = new Member[0];
 
     public Club() {
+    }
+
+    public void showMembers() {
+        // in 3rd element will encounter NPE because array is initialized with null objects
+        // and 3rd element is null (only 1st and 2nd filled)
+        for (Member mem : members) {
+            mem.show();
+        }
     }
 
     public void addMember(String surname, String firstName, String secondName) {
@@ -24,14 +28,6 @@ public class Club {
         // instead of just assigning the membership number.
         members = Arrays.copyOf(members, members.length+1);
         members[members.length-1] = m;
-    }
-
-    public void showMembers() {
-        // in 3rd element will encounter NPE because array is initialized with null objects
-        // and 3rd element is null (only 1st and 2nd filled)
-        for (Member mem : members) {
-            mem.show();
-        }
     }
 
     public void removeMember(int membershipNumber) {
@@ -47,6 +43,11 @@ public class Club {
             members[i] = members[i+1];
         }
         members = Arrays.copyOf(members, members.length - 1);
-
     }
+
+    public Member[] getMembers() {
+        return members;
+    }
+
+
 }
