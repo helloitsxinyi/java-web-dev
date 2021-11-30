@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.List;
+
 public class ClubApplication {
     public static void main(String[] args) {
         Person p1, p2, p3;
@@ -25,7 +27,7 @@ public class ClubApplication {
         c.addMember("Hoon", "Jongwon", "Daniel");
         c.addMember("Brown", "Jerry", null);
 
-        Member[] members = c.getMembers();
+        List<Member> members = c.getMembers();
 
         System.out.println ("People:");
         p1.show();

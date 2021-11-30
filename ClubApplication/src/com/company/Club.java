@@ -59,5 +59,7 @@ public class Club {
         members.add(new Member(surname, firstName, secondName, membershipNumber));
     }
 
-
+    public void removeMember(int membershipNumber) {
+        members.removeIf(member -> member.getMemberNumber() == membershipNumber);
+    }
 }
