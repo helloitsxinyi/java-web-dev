@@ -3,7 +3,7 @@
 * Workshop 3 - Club Manager (Inheritance, Arrays)
 * Workshop 3b - Generics
 * Workshop 4 - Club Manager (Collections)
-
+* Spring Boot intro - hello 
 
 # Contents:
 * Projects for the respective workshops.
