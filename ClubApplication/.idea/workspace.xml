@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce66d17d-d26f-4af8-bf0e-505b5fcf13b4" name="Changes" comment="remove comment about array in clubarraylist" />
+    <list default="true" id="ce66d17d-d26f-4af8-bf0e-505b5fcf13b4" name="Changes" comment="remove comment about array in clubarraylist">
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/ClubManager-whsp2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/bin/club/ClubApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/bin/club/Facility.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/bin/club/Person.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/src/club/ClubApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/src/club/Facility.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/src/club/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test/com/company/Club.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test/com/company/Club.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test/com/company/ClubApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test/com/company/ClubApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Test/com/company/ClubArrayList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test/com/company/ClubArrayList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ClubApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ClubApplication.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +119,7 @@
       <recent name="com.company" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.ClubApplication" />
       <module name="Test" />
@@ -121,14 +142,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Main (1)" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -142,7 +158,8 @@
       <updated>1638167213639</updated>
       <workItem from="1638167215097" duration="2871000" />
       <workItem from="1638171245536" duration="5147000" />
-      <workItem from="1638245035828" duration="10757000" />
+      <workItem from="1638245035828" duration="12226000" />
+      <workItem from="1638367863946" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="add ClubApplication class">
       <created>1638167658908</created>

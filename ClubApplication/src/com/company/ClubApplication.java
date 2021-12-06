@@ -54,5 +54,11 @@ public class ClubApplication {
         c.addFacility("Room2", "Meeting Room on Level 3");
 
         c.show();
+
+        String s1 = "hi, sa students!";
+        String s2 = new String("hi, sa students!");
+        System.out.println(s1 == s2);
+        System.out.println(s1.equals(s2));
+        System.out.println(s1.equalsIgnoreCase(s2));
     }
 }
