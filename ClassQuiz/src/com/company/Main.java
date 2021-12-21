@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Main {
 
+    // need a value in order to add to sum, so T extends Number. can;t just sum T
     static <T extends Number> double sumItems(List<T> list) {
         double sum = 0;
         for (T item : list) {
