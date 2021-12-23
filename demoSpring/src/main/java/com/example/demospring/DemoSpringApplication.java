@@ -33,15 +33,23 @@ public class DemoSpringApplication {
     CommandLineRunner runner() {
         return args -> {
             Customer c = new Customer("Tan", "SG");
+            Customer c2 = new Customer("Lim", "SGP");
             Product p = new Product("Phone","mobile phone", 150.00);
             crepo.save(c);
+            crepo.save(c2);
             prepo.save(p);
             ArrayList<Product> plist = (ArrayList) prepo.findAll();
             for (Product prod : plist) {
                 System.out.println(prod.toString());
             }
+
             ArrayList<Customer> clist = (ArrayList) crepo.findAll();
             for (Customer cust: clist) {
+                System.out.println(cust.toString());
+            }
+
+            ArrayList<Customer> cnames = (ArrayList) crepo.findCustomersByName("Tan");
+            for (Customer cust: cnames) {
                 System.out.println(cust.toString());
             }
         };
