@@ -1,14 +1,18 @@
 package com.example.demospring.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name="product")
 public class Product {
+    // generation strategy is a MUST (identifier)
+    // IDENTITY strategy gives control to connectivity framework(JPA). JPA designs.
+    // AUTO is default settings of JPA
+    // SEQUENCE done by entity side
+    // TABLE done by r/s side.
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer productId;
     private String name;
     private String description;

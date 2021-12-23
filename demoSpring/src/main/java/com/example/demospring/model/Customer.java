@@ -1,19 +1,18 @@
 package com.example.demospring.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name="customer")
 public class Customer {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer customerId;
     private String name;
     private String address;
 
-    public Customer(Integer customerId, String name, String address) {
+    public Customer(String name, String address) {
         this.name = name;
         this.address = address;
     }
