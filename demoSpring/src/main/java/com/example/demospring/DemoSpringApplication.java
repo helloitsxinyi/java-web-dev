@@ -25,6 +25,9 @@ public class DemoSpringApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoSpringApplication.class, args);
     }
+    // start and go to localhost:8080/h2-console
+    // JDBC URL: see logs "Database available at 'jdbc:h2:mem:datajpa'"
+    // now u can login using User ID and pw (as defined in config file) and do SQL queries to check tables and rows!
 
     @Bean
     CommandLineRunner runner() {
