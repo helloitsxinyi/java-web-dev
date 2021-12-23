@@ -1,8 +1,14 @@
 package com.example.demospring.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 
+@Entity
+@Table(name="product")
 public class Product {
+    @Id
     private Integer productId;
     private String name;
     private String description;
@@ -12,6 +18,10 @@ public class Product {
         this.name = name;
         this.description = description;
         this.price = price;
+    }
+
+    public Product() {
+
     }
 
     public String getName() {

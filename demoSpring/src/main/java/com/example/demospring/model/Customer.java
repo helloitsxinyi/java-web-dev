@@ -1,8 +1,14 @@
 package com.example.demospring.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 
+@Entity
+@Table(name="customer")
 public class Customer {
+    @Id
     private Integer customerId;
     private String name;
     private String address;
@@ -10,6 +16,9 @@ public class Customer {
     public Customer(Integer customerId, String name, String address) {
         this.name = name;
         this.address = address;
+    }
+
+    public Customer() {
     }
 
     public String getName() {
