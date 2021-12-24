@@ -37,7 +37,10 @@ public class DemoSpringApplication {
             Customer c = new Customer("Tan", "SG");
             Customer c2 = new Customer("Lim", "SGP");
             Product p = new Product("Phone","mobile phone", 150.00);
-            crepo.save(c);
+            // flush = sync with underlying db.
+            // save is just save.
+            // but impt still need to commit.
+            crepo.saveAndFlush(c);
             crepo.save(c2);
             prepo.save(p);
             ArrayList<Product> plist = (ArrayList) prepo.findAll();
