@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Objects;
 
 @Entity
@@ -16,9 +18,18 @@ public class Customer implements Comparable<Customer> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer customerId;
     private String name;
-    private String address;
+    @OneToMany(mappedBy="customer")
+    private Collection<Address> address = new HashSet<>();
 
-    public Customer(String name, String address) {
+    public Customer(String name, String a) {
+        this.name = name;
+        Address address = new Address(a,"AAA", "BB");
+        HashSet<Address> s = new HashSet<>();
+        s.add(address);
+        this.address = s;
+    }
+
+    public Customer(String name, Collection<Address> address) {
         this.name = name;
         this.address = address;
     }

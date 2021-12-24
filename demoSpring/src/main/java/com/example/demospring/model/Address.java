@@ -16,6 +16,9 @@ public class Address {
     private String street;
     private String city;
     private String country;
+    // assume at least one customer. otherwise can use many to any
+    @ManyToOne
+    private Customer customer;
 
     public Address(String street, String city, String country) {
         this.street = street;
