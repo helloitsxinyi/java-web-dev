@@ -18,7 +18,7 @@ public class Customer implements Comparable<Customer> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer customerId;
     private String name;
-//    // remove bidirectional mapping
+    // remove bidirectional mapping
 //    @OneToMany(mappedBy="customer")
     // if customer record is deleted, delete all related addresses.
     // here, map address inside customer class, not doing the reverse.

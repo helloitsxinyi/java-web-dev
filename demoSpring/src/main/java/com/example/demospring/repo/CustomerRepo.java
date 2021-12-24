@@ -13,10 +13,10 @@ public interface CustomerRepo extends JpaRepository<Customer, Integer> {
 
     ArrayList<Customer> findCustomersByName(String name);
 
-    @Query ("Select c from Customer c where c.address=:address and c.name = :name")
+    @Query ("Select c from Customer c where c.name = :name")
     // @Param to bind
-    Customer readCustomerByNameAndAddress(@Param("name") String n, @Param("address") String a);
+    Customer readCustomerByNameAndAddress(@Param("name") String n);
 
-    @Query("select c from Customer c where c.address like :address")
+    @Query("select c from Customer c where c.address.street like :address")
     ArrayList<Customer> readAndSortByAddress(@Param("address") String a, Sort sort);
 }

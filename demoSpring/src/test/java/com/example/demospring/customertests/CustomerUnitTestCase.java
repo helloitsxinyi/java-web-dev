@@ -76,7 +76,7 @@ public class CustomerUnitTestCase {
         clist.add(c3);
         crepo.saveAllAndFlush(clist);
 
-        Customer result = crepo.readCustomerByNameAndAddress("Ong", "MY");
+        Customer result = crepo.readCustomerByNameAndAddress("Ong");
 
         assertEquals(c2, result, "Test case failure");
     }
