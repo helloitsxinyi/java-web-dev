@@ -10,7 +10,8 @@ import java.util.Objects;
 @Table(name="customer")
 @Data
 @NoArgsConstructor
-public class Customer {
+// use comparable if sorting needs to based on natural order
+public class Customer implements Comparable<Customer> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer customerId;
@@ -22,5 +23,13 @@ public class Customer {
         this.address = address;
     }
 
+    @Override
+    public int compareTo(Customer o) {
+        if (this.customerId == o.getCustomerId())
+            return 0;
+        else
+            return -1;
+
+    }
 
 }

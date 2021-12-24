@@ -12,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public class CustomerUnitTestCase {
     @Test
     // first to be executed. must include order!
     @Order(1)
-    void testSomething() {
+    public void testSomething() {
         // will not pass on the first time, because previously in CmdLineRunner we alr added 2! so total will be 6, not 4.
         // need to go to H2 and drop rows
         // alt, can use deleteAll.
@@ -60,5 +61,42 @@ public class CustomerUnitTestCase {
         assertEquals(rlist.size(),4);
     }
 
+    @Test
+    @Order(2)
+    public void testReadByCustomerNameAndAddress() {
+        crepo.deleteAll();
+        Customer c = new Customer("Tan", "SG");
+        Customer c1 = new Customer("Lim", "SGP");
+        Customer c2 = new Customer("Ong", "MY");
+        Customer c3 = new Customer("And", "AU");
+        ArrayList<Customer> clist = new ArrayList<>();
+        clist.add(c);
+        clist.add(c1);
+        clist.add(c2);
+        clist.add(c3);
+        crepo.saveAllAndFlush(clist);
+
+        Customer result = crepo.readCustomerByNameAndAddress("Ong", "MY");
+
+        assertEquals(c2, result, "Test case failure");
+    }
+
+    @Test
+    @Order(3)
+    public void testReadAndSortByAddress() {
+        crepo.deleteAll();
+        Customer c = new Customer("Tan", "SG");
+        Customer c1 = new Customer("Lim", "SG");
+        Customer c2 = new Customer("Ong", "MY");
+        Customer c3 = new Customer("And", "AU");
+        ArrayList<Customer> clist = new ArrayList<>();
+        clist.add(c);
+        clist.add(c1);
+        clist.add(c2);
+        clist.add(c3);
+        crepo.saveAllAndFlush(clist);
+
+//        ArrayList<C> result = crepo.readAndSortByAddress("SG", new Sort.by("name"));
+    }
 
 }
