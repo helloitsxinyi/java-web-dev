@@ -29,7 +29,7 @@ public class Customer implements Comparable<Customer> {
         this.address = s;
     }
 
-    public Customer(String name, Collection<Address> address) {
+    public Customer(String name, HashSet<Address> address) {
         this.name = name;
         this.address = address;
     }
