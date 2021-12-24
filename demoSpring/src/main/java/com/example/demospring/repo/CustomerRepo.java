@@ -17,6 +17,6 @@ public interface CustomerRepo extends JpaRepository<Customer, Integer> {
     // @Param to bind
     Customer readCustomerByNameAndAddress(@Param("name") String n);
 
-    @Query("select c from Customer c where c.address.street like :address")
-    ArrayList<Customer> readAndSortByAddress(@Param("address") String a, Sort sort);
+//    @Query("select c from Customer c where c.address.street like :address")
+//    ArrayList<Customer> readAndSortByAddress(@Param("address") String a, Sort sort);
 }
