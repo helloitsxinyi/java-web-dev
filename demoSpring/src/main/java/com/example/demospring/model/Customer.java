@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Objects;
 
 @Entity
 @Table(name="customer")
@@ -22,8 +21,12 @@ public class Customer implements Comparable<Customer> {
 //    @OneToMany(mappedBy="customer")
     // if customer record is deleted, delete all related addresses.
     // here, map address inside customer class, not doing the reverse.
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Collection<Address> address = new HashSet<>();
+
+//    @Column(unique = true)
+//    private EmailAddress emailAddress;
+
 
     public Customer(String name, String a) {
         this.name = name;
