@@ -3,6 +3,7 @@ package com.example.demospring.customertests;
 import com.example.demospring.DemoSpringApplication;
 import com.example.demospring.model.Customer;
 import com.example.demospring.model.Product;
+import com.example.demospring.repo.AddressRepo;
 import com.example.demospring.repo.CustomerRepo;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -33,6 +34,7 @@ public class CustomerUnitTestCase {
     // Autowiring can't be used to inject primitive and string values. It works with reference only.
     @Autowired
     CustomerRepo crepo;
+
     @Test
     // first to be executed. must include order!
     @Order(1)
@@ -87,7 +89,7 @@ public class CustomerUnitTestCase {
         crepo.deleteAll();
         Customer c = new Customer("Tan", "SG");
         Customer c1 = new Customer("Lim", "SG");
-        Customer c2 = new Customer("Ong", "MY");
+        Customer c2 = new Customer("Tan", "MY");
         Customer c3 = new Customer("And", "AU");
         ArrayList<Customer> clist = new ArrayList<>();
         clist.add(c);
@@ -96,7 +98,42 @@ public class CustomerUnitTestCase {
         clist.add(c3);
         crepo.saveAllAndFlush(clist);
 
-//        ArrayList<C> result = crepo.readAndSortByAddress("SG", new Sort.by("name"));
+        // sort is a static class
+        // ASC = ascending
+        ArrayList<Customer> result = crepo.readCustomerSortedByName("Tan", Sort.by(Sort.Direction.ASC, "customerId"));
+
+        assertEquals(result.size(), 2);
     }
 
+    @Test
+    void testReadByCustomer_Address_Street() {
+        crepo.deleteAll();
+        Customer c = new Customer("Tan", "SG");
+        Customer c1 = new Customer("Lim", "SG P");
+        Customer c2 = new Customer("Tan", "MY SG");
+        Customer c3 = new Customer("And", "AU");
+        Customer c4 = new Customer("Ann", "SG");
+        Customer c5 = new Customer("Ong", "SG P");
+        ArrayList<Customer> clist = new ArrayList<>();
+        clist.add(c);
+        clist.add(c1);
+        clist.add(c2);
+        clist.add(c3);
+        clist.add(c4);
+        clist.add(c5);
+        crepo.saveAllAndFlush(clist);
+
+        // must be exact match SG. no SG P or MY SG.
+        ArrayList<Customer> result = crepo.readByAddress_StreetLike("SG");
+        assertEquals(result.size(),2);
+
+        ArrayList<Customer> result1 = crepo.readByAddress_StreetLike("%SG%");
+        assertEquals(result1.size(),5);
+
+        ArrayList<Customer> result2 = crepo.readByAddress_StreetLike("%SG");
+        assertEquals(result2.size(),3);
+
+        ArrayList<Customer> result3 = crepo.readByAddress_StreetLike("SG%");
+        assertEquals(result3.size(),4);
+    }
 }
