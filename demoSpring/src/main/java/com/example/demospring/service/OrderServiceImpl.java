@@ -16,7 +16,6 @@ public class OrderServiceImpl implements OrderService {
         // check if c is valid
         // throw exc if fail. do at every step
 
-
         // check if sa and ba are valid (in DB)
 
         // check li are valid prods
