@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
 
+//using @Data, lombok helps to generate toString, equalsHashCode, getter, setter, requiredArgsConstructor.
 @Entity
 @Table(name="customer")
 @Data
