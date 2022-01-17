@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Student Form</title>
+</head>
+
+<body>
+	<h1> Student form!</h1>
+	<!--th:object -> what object is coming into the form?
+	th:action -> what action is expected to be taken when POST? which action class?
+	-->
+
+	<!-- need to put object key expected. in /load u see that we have added 
+	model attribute as stdt, so need to enter stdt in th:object.-->
+	<form th:object="${stdt}" th:action="@{/student/addstudent}" method="POST">
+		<fieldset>
+			Name:
+			<input type="text" th:field="*{name}" />
+		</fieldset>
+		<fieldset>
+			Nick:
+			<input type="text" th:field="*{nick}" />
+		</fieldset>
+		<fieldset>
+			Fee:
+			<input type="text" th:field="*{fee}" />
+		</fieldset>
+		<fieldset>
+			CAP:
+			<input type="text" th:field=*{cap} />
+		</fieldset>
+		<fieldset>
+			<input type="submit" value="SAVE" />
+			&nbsp;
+			<input type="reset" value="CLEAR" />
+		</fieldset>
+	</form>
+</body>
+
+</html>
