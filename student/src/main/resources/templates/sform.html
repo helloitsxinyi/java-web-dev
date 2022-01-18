@@ -16,6 +16,9 @@
 	model attribute as stdt, so need to enter stdt in th:object.-->
 	<form th:object="${stdt}" th:action="@{/student/addstudent}" method="POST">
 		<fieldset>
+			<input type="hidden" th:field="*{studentId}" />
+		</fieldset>
+		<fieldset>
 			Name:
 			<input type="text" th:field="*{name}" />
 		</fieldset>
