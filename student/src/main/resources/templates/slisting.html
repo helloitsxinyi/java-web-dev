@@ -22,6 +22,8 @@
 			<th> NICK </th>
 			<th> FEE </th>
 			<th> CAP </th>
+			<th> Edit </th>
+			<th> Delete </th>
 		</tr>
 
 		<!-- each item = student, full arr = students -->
@@ -31,6 +33,11 @@
 			<td th:text="${student.nick}">NICK</td>
 			<td th:text="${student.fee}">FEE</td>
 			<td th:text="${student.cap}">CAP</td>
+			<td> <a href="sform.html" th:href="@{/student/editload/}+${student.studentId}"
+					th:utext="#{student.edit}">Edit </a></td>
+			<!--href only work as a get mapping. change deleteStudent mapping to @RequestMapping instead of @DeleteMapping-->
+			<td> <a href="sform.html" th:href="@{/student/deletestudent/}+${student.studentId}"
+					th:utext="#{student.delete}">Delete </a></td>
 		</tr>
 	</table>
 </body>
