@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf3ccb6a-bfc5-43e4-84bd-78c960f84aad" name="Changes" comment="" />
+    <list default="true" id="bf3ccb6a-bfc5-43e4-84bd-78c960f84aad" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +76,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/2022" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -97,6 +105,9 @@
       <updated>1638167126356</updated>
       <workItem from="1638167128634" duration="85000" />
       <workItem from="1639628248758" duration="58000" />
+      <workItem from="1653614761692" duration="518000" />
+      <workItem from="1653617683718" duration="28000" />
+      <workItem from="1653617734697" duration="229000" />
     </task>
     <servers />
   </component>
