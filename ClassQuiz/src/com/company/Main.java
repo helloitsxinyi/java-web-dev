@@ -6,27 +6,25 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Main {
-
-    // need a value in order to add to sum, so T extends Number. can;t just sum T
-    static <T extends Number> double sumItems(List<T> list) {
-        double sum = 0;
-        for (T item : list) {
-            sum += item.doubleValue();
-        }
-        return sum;
-    }
-
     public static void main(String[] args) {
         List<Integer> intList = new ArrayList<>(); intList.add(1);
         intList.add(2);
-        intList.add(3); System.out.println(sumItems(intList));
+        intList.add(3);
+        System.out.println(sumItems(intList));
         List<Double> doubleList = new ArrayList<>(); doubleList.add(1.1);
         doubleList.add(2.2);
-        doubleList.add(3.3); System.out.println(sumItems(doubleList));
+        doubleList.add(3.3);
+        System.out.println(sumItems(doubleList));
 
         int[] arr = {1,2,2,5,3,4,5,5,2};
+
         findMaxNums(arr);
         sumEvenAndOdd(arr);
+
+        // Q: can T be primitive type? tried int[] but say err. must be type T[]
+        // A: Generic type arguments are constrained to extend Object,
+        // meaning that they are not compatible with primitive instantiations unless boxing is used, undermining performance.
+        System.out.println(maxItems(new Integer[]{1, 2, 5, 4}));
     }
 
     public static void findMaxNums(int[] numArr) {
@@ -58,7 +56,30 @@ public class Main {
                 oddSum += i;
             }
         }
-
         System.out.println("even sum is: " +  evenSum + " and odd sum is " + oddSum);
     }
+
+
+    // need a value in order to add to sum, so T extends Number. can;t just sum T
+    static <T extends Number> double sumItems(List<T> list) {
+        double sum = 0;
+        for (T item : list) {
+            sum += item.doubleValue();
+        }
+        return sum;
+    }
+    public static <T extends Comparable<T>> T maxItems (T[] arr){
+        T maxEle = arr[0];
+        for (T ele: arr) {
+            // generic type: cannot use greater sign!!!
+            // need to use COMPARABLE
+            if (ele.compareTo(maxEle) > 0) {
+                maxEle = ele;
+            }
+        }
+        return maxEle;
+    }
+
+
+
 }
