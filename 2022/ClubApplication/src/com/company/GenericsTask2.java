@@ -24,7 +24,10 @@ class Compute {
                 // if you get the error:
                 // The value x.doubleValue() + y.doubleValue() assigned to 'ans' is never used ?
                 // rmb to break!! then all considered used.
-                // if not only the last case is considered used (since there is a possibility of falling through)
+                // if not only the last case is considered used (since code will continue to test in other blocks)
+
+                // MUST use break keyword.
+                // This will stop the execution of more code and case testing inside the block. (ie proceed to other cases)
                 ans =  x.doubleValue() + y.doubleValue();
                 break;
             case "minus":
@@ -37,9 +40,9 @@ class Compute {
                 // 0 or 0.0 both work!
                 if (y.doubleValue() == 0) {
                  ans = 0.0;
-                } else {
-                    ans = x.doubleValue() / y.doubleValue();
+                 break;
                 }
+                ans = x.doubleValue() / y.doubleValue();
                 break;
         }
 
