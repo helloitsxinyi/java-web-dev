@@ -1,5 +1,8 @@
 package com.company;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -25,6 +28,7 @@ public class Main {
         // A: Generic type arguments are constrained to extend Object,
         // meaning that they are not compatible with primitive instantiations unless boxing is used, undermining performance.
         System.out.println(maxItems(new Integer[]{1, 2, 5, 4}));
+        dateTime();
     }
 
     public static void findMaxNums(int[] numArr) {
@@ -79,6 +83,18 @@ public class Main {
         }
         return maxEle;
     }
+
+    public static void dateTime() {
+        LocalDateTime startTimeInSG = LocalDateTime.of(2020,1,1,8,10);
+        ZonedDateTime sgTimeZoneAndTime = ZonedDateTime.of(startTimeInSG, ZoneId.of("Asia/Singapore"));
+        System.out.println("Time in SG: " + sgTimeZoneAndTime);
+
+        LocalDateTime endTimeInSG = startTimeInSG.plusHours(18).plusMinutes(25);
+        System.out.println(endTimeInSG);
+        ZonedDateTime endTimeInNY = ZonedDateTime.of(endTimeInSG, ZoneId.of("America/New_York"));
+        System.out.println("Time in NY after landing: " + endTimeInNY);
+    }
+
 
 
 
