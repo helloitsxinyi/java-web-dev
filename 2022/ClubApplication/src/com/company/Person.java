@@ -24,12 +24,16 @@ public class Person {
     }
 
     public void show() {
+    System.out.println(toString());
+    }
+
+    @Override
+    public String toString() {
         String name = firstName;
         if (secondName != null) {
             name += " " + secondName;
         }
         name += " " + surname;
-    System.out.println(name);
+       return name;
     }
-
 }
