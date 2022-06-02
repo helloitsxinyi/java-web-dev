@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
@@ -94,8 +95,6 @@ public class Main {
         ZonedDateTime endTimeInNY = ZonedDateTime.of(endTimeInSG, ZoneId.of("America/New_York"));
         System.out.println("Time in NY after landing: " + endTimeInNY);
     }
-
-
 
 
 }
