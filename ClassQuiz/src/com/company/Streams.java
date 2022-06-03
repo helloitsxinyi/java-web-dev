@@ -25,11 +25,11 @@ public class Streams {
 
     List<Person> persons = generatePersonList();
 
-    Person pMostKids = persons.stream().max((p1, p2) -> {
-        if (p1.getKids() > p2.getKids()) {
-            // Bad return type in lambda expression: Person cannot be converted to int
-            return p1;
-        }
-        return p2;
-    }).get();
+//    Person pMostKids = persons.stream().max((p1, p2) -> {
+//        if (p1.getKids() > p2.getKids()) {
+//            // Bad return type in lambda expression: Person cannot be converted to int
+//            return p1;
+//        }
+//        return p2;
+//    }).get();
 }
