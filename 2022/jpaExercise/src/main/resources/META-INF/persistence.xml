@@ -4,10 +4,13 @@
                       transaction-type="RESOURCE_LOCAL">
         <class>iss.persistent.Employee</class>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/jpa_example?serverTimezone=UTC" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/Employee?createDatabaseIfNotExist=true
+" />
             <property name="javax.persistence.jdbc.user" value="user" />
             <property name="javax.persistence.jdbc.password" value="Password@123" />
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+<!--            auto create tables if don't have-->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
         </properties>
     </persistence-unit>
 </persistence>
