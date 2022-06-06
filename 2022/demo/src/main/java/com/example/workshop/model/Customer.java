@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.workshop.model;
 
 public class Customer {
         private String id;
