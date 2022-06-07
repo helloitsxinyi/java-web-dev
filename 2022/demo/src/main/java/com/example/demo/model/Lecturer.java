@@ -17,7 +17,7 @@ import java.util.Objects;
 public class Lecturer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
     private String name;
     private String nickname;
     private Double salary;

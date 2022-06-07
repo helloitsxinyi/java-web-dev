@@ -1,4 +1,5 @@
 package com.example.demo.model;
+// why hibernate insert into lecturer ....values (default, ?, ?, ?) ??
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,17 +18,6 @@ public class Student {
     private String name;
     private String nickName;
     private Double cap;
-
-    public Student(int id, String name, String nickName, Double cap) {
-        this.id = id;
-        this.name = name;
-        this.nickName = nickName;
-        this.cap = cap;
-    }
-
-    public Student() {
-        super();
-    }
 
     public String getName() {
         return name;
