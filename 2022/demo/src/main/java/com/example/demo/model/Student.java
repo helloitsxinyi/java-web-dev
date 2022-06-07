@@ -1,8 +1,18 @@
 package com.example.demo.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
 public class Student {
+    @Id
+    // default of strategy is AUTO (or whatever your hibernate default settings are.)
+    // sequence - responsibility falls MySQL or any other DB you are talking to.
+    // identity - responsibility falls on Spring or framework to generate PK
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String nickName;
@@ -13,6 +23,10 @@ public class Student {
         this.name = name;
         this.nickName = nickName;
         this.cap = cap;
+    }
+
+    public Student() {
+        super();
     }
 
     public String getName() {
