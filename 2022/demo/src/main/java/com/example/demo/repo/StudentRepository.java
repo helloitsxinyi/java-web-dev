@@ -17,7 +17,7 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
     // important for student to be CAPS because u are querying class name
     // ?1 -> replace first argument with input
 
-    // default style
+    // // default style
     // @Query("from Student s where s.nickName=?1")
     // public ArrayList<Student> funnyNameOne(String nickName);
 
@@ -25,4 +25,8 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
     @Query("from Student s where s.nickName = :nn")
     public ArrayList<Student> funnyNameOne(@Param("nn") String nickName);
 
+    // // use native true if want to query in your own db eg heidi etc
+    // @Query(value = "insert sql query here", nativeQuery = true) {
+
+    }
 }
