@@ -16,6 +16,9 @@ public class Laptop {
     private Integer id;
     private String model;
     private Double price;
+    // the table with the mappedBy is the secondary table.
+    @OneToOne(mappedBy = "owns")
+    private Student student;
 
     public Laptop(String model, Double price) {
         this.model = model;

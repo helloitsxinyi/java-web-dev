@@ -17,16 +17,24 @@ public class Student {
     private String name;
     private String nickName;
     private Double cap;
+
+    @OneToOne(cascade = {CascadeType.ALL})
+    // if no join column statement, spring will decide how to call the FK
+    @JoinColumn(name="owns_id")
     private Laptop owns;
 
-    @OneToOne
     public Laptop getOwns() {
         return owns;
     }
 
-    public void setOwns(Laptop laptop) {
-        this.owns = laptop;
-    }
+//    @OneToOne
+//    public Laptop getOwns() {
+//        return owns;
+//    }
+//
+//    public void setOwns(Laptop laptop) {
+//        this.owns = laptop;
+//    }
 
     public Student() {
         super();
