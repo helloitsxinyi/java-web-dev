@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title> Welcome </title>
+
+</head>
+<body>
+    <h1>Lemme tell u the time</h1>
+    <!-- add in the attrName defined in controller-->
+    <h2>Today is ${tday}. Too bad, this one doesn't work.</h2>
+    <!-- now add in through thymeleaf using th:text tag. -->
+    <h2>Alternatively i can display another time: <span th:text=${tday}></h2>
+</body>
