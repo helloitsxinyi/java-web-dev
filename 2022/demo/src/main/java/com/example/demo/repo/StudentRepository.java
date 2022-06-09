@@ -28,5 +28,5 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
     // // use native true if want to query in your own db eg heidi etc
     // @Query(value = "insert sql query here", nativeQuery = true) {
 
-    }
+//    }
 }

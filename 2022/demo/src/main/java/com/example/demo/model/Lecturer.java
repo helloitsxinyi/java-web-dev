@@ -24,6 +24,7 @@ public class Lecturer {
     private Double salary;
 
     public Lecturer(String name, String nickname, Double salary) {
+        super();
         this.name = name;
         this.nickname = nickname;
         this.salary = salary;
@@ -34,12 +35,12 @@ public class Lecturer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Lecturer lecturer = (Lecturer) o;
-        return id == lecturer.id && Objects.equals(name, lecturer.name) && Objects.equals(nickname, lecturer.nickname) && Objects.equals(salary, lecturer.salary);
+        return id == lecturer.id && Objects.equals(name, lecturer.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, nickname, salary);
+        return Objects.hash(id, name);
     }
 
     @Override

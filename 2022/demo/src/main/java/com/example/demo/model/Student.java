@@ -3,10 +3,7 @@ package com.example.demo.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -16,18 +13,38 @@ public class Student {
     // sequence - responsibility falls MySQL or any other DB you are talking to.
     // identity - responsibility falls on Spring or framework to generate PK
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
     private String nickName;
     private Double cap;
+    private Laptop owns;
+
+    @OneToOne
+    public Laptop getOwns() {
+        return owns;
+    }
+
+    public void setOwns(Laptop laptop) {
+        this.owns = laptop;
+    }
 
     public Student() {
+        super();
     }
 
     public Student(String name, String nickName, Double cap) {
+        super();
         this.name = name;
         this.nickName = nickName;
         this.cap = cap;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -59,12 +76,12 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return id == student.id && Objects.equals(name, student.name) && Objects.equals(nickName, student.nickName) && Objects.equals(cap, student.cap);
+        return Objects.equals(id, student.id) && Objects.equals(name, student.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, nickName, cap);
+        return Objects.hash(id, name);
     }
 
     @Override
