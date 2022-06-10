@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.controllers.book.Book;
 import com.example.demo.repo.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,8 +18,9 @@ public class BookController {
     BookRepository brepo;
 
     @GetMapping("/add")
-    public String loadForm(@ModelAttribute("book") Book b) {
-        b = new Book();
+    public String loadForm(Model model) {
+        Book b = new Book();
+        model.addAttribute(b);
         return "bookform";
     }
 
@@ -26,6 +28,9 @@ public class BookController {
     public String saveForm(@ModelAttribute("book") Book b) {
         brepo.save(b);
 //        what is the meaning of this format?
+        // forward to another controller?
+        // redirect: redirect to another controller in same application??
+        // watch lecture 9 jun afternoon
         return "forward:/book/list";
     }
 

@@ -20,6 +20,8 @@ public class Student {
 
     @OneToOne(cascade = {CascadeType.ALL})
     // if no join column statement, spring will decide how to call the FK
+    // place the @JoinColumn annotation to configure the name of the column in owning side. this maps to PK of other table.
+    // who owns FK, put @JoinColumn.
     @JoinColumn(name="owns_id")
     private Laptop owns;
 
