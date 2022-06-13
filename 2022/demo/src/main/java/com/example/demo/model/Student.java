@@ -2,11 +2,15 @@ package com.example.demo.model;
 // why hibernate insert into lecturer ....values (default, ?, ?, ?) ??
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Data
+@ToString
 public class Student {
     @Id
     // default of strategy is AUTO (or whatever your hibernate default settings are.)
@@ -18,25 +22,12 @@ public class Student {
     private String nickName;
     private Double cap;
 
-    @OneToOne(cascade = {CascadeType.ALL})
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     // if no join column statement, spring will decide how to call the FK
     // place the @JoinColumn annotation to configure the name of the column in owning side. this maps to PK of other table.
     // who owns FK, put @JoinColumn.
-    @JoinColumn(name="owns_id")
+    @JoinColumn(name="STU_LAP")
     private Laptop owns;
-
-    public Laptop getOwns() {
-        return owns;
-    }
-
-//    @OneToOne
-//    public Laptop getOwns() {
-//        return owns;
-//    }
-//
-//    public void setOwns(Laptop laptop) {
-//        this.owns = laptop;
-//    }
 
     public Student() {
         super();
@@ -49,37 +40,6 @@ public class Student {
         this.cap = cap;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
-
-    public Double getCap() {
-        return cap;
-    }
-
-    public void setCap(Double cap) {
-        this.cap = cap;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -92,15 +52,5 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(id, name);
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", nickName='" + nickName + '\'' +
-                ", cap=" + cap +
-                '}';
     }
 }

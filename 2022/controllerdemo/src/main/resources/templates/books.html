@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title> Book Details </title>
+</head>
+<body>
+    <h1> Welcome to Book Details </h1>
+    <table>
+        <th>
+            <td> ISBN Number </td>
+            <td> Book Name </td>
+            <td> Description </td>
+            <td> Price </td>
+        </th>
+
+        <!-- iteration -->
+        <tr th:each="book:${books}">
+            <td>${book.isbn}</td>
+            <td>${book.name}</td>
+            <td>${book.description}</td>
+            <td>${book.price}</td>
+        </tr>
+    </table>
+</body>
+
