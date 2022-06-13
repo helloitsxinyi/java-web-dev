@@ -5,11 +5,26 @@
     <title> Details </title>
     <link rel="stylesheet" type="text/css" media="all"
           href="../static/css/simple.css" th:href="@{/css/simple.css}" />
-
-
 </head>
 <body>
     <h1> Welcome to book details </h1>
-    <
+    <table>
+        <tr>
+            <td> ISBN Number </td>
+            <td><span th:text="${book.isbn}"></td>
+        </tr>
+        <tr>
+            <td> Book Name </td>
+            <td><span th:text="${book.name}"></td>
+        </tr>
+        <tr>
+            <td> Description </td>
+            <td><span th:text="${book.description}"></td>
+        </tr>
+        <tr>
+            <td> Price </td>
+            <td><span th:text="${book.price}"></td>
+        </tr>
+    </table>
 </body>
 
