@@ -1,5 +1,8 @@
-package com.example.demo.controllers;
+package com.example.controllerdemo.controllers;
 
+import com.example.controllerdemo.book.Book;
+import com.example.controllerdemo.repo.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,11 +12,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 // rmb to import correct util class
 import java.util.Date;
-import java.util.stream.Stream;
+
 
 @Controller
 @RequestMapping("/hello")
 public class HelloController {
+
+    @Autowired
+    BookRepository brepo;
 
 //    localhost:8080/hello/welcome
     @GetMapping("/welcome")
@@ -29,9 +35,10 @@ public class HelloController {
         return "welcome";
     }
 
-    @GetMapping("/bootdetails")
-    public String displayDetail(Model model ) {
-//        Book b = (Book) findByIf(1).get
-        return "";
+    @GetMapping("/bookdetails")
+    public String displayDetail(Model model) {
+        Book b = (Book) brepo.findById(1).get();
+        model.addAttribute("book", b);
+        return "details";
     }
 }

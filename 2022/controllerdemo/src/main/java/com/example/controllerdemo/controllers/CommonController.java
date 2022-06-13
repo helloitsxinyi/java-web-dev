@@ -1,7 +1,6 @@
-package com.example.demo.controllers;
+package com.example.controllerdemo.controllers;
 
-
-import com.example.demo.model.User;
+import com.example.controllerdemo.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,12 +20,12 @@ public class CommonController {
         return "login";
     }
 
-    @RequestMapping("/authenticate")
-    // object comes in as user object
-    public String login(@ModelAttribute("user") User user) {
-        if(user.getUsername().equalsIgnoreCase("house")) {
-            return "products";
-        }
-        else return "login";
-    }
+//    @RequestMapping("/authenticate")
+//    // object comes in as user object
+//    public String login(@ModelAttribute("user") User user) {
+//        if(user.getUsername().equalsIgnoreCase("house")) {
+//            return "products";
+//        }
+//        else return "login";
+//    }
 }

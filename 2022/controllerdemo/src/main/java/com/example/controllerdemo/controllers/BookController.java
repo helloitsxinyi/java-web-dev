@@ -1,7 +1,7 @@
-package com.example.demo.controllers;
+package com.example.controllerdemo.controllers;
 
-import com.example.demo.controllers.book.Book;
-import com.example.demo.repo.BookRepository;
+import com.example.controllerdemo.book.Book;
+import com.example.controllerdemo.repo.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.example.demo.controllers.book;
+package com.example.controllerdemo.book;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
