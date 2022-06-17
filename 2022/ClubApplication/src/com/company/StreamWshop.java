@@ -1,4 +1,5 @@
 package com.company;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,9 +21,9 @@ public class StreamWshop {
         // the total salary of all staff
         System.out.println("\n[Exercise 2: Sum]");
         // transform to another value/type using map
-       float sum = staffList.stream()
+        float sum = staffList.stream()
                 .map(staff -> staff.getSalary())
-                .reduce((s1, s2)-> s1+s2)
+                .reduce((s1, s2) -> s1 + s2)
                 .get();
         System.out.println(sum);
 
@@ -32,8 +33,8 @@ public class StreamWshop {
         // object within the List
         System.out.println("\n[Exercise 3: Filter]");
         staffList.stream()
-                 .filter(staff -> staff.getSalary() > 3500)
-                 .forEach(System.out::println);
+                .filter(staff -> staff.getSalary() > 3500)
+                .forEach(System.out::println);
 
         // Exercise 4: Using streams' map(), print
         // the list of increments that are less

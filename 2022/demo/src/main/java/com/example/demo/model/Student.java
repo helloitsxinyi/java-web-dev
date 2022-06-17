@@ -26,7 +26,7 @@ public class Student {
     // if no join column statement, spring will decide how to call the FK
     // place the @JoinColumn annotation to configure the name of the column in owning side. this maps to PK of other table.
     // who owns FK, put @JoinColumn.
-    @JoinColumn(name="STU_LAP")
+    @JoinColumn(name = "STU_LAP")
     private Laptop owns;
 
     public Student() {

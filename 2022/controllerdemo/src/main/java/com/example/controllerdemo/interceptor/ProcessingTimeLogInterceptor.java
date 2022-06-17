@@ -28,10 +28,8 @@ public class ProcessingTimeLogInterceptor {
         long startTime = (Long) request.getAttribute("startTime");
         long endTime = System.currentTimeMillis();
 
-        LOGGER.info(String.format("%s millisecond taken to process the request %s.",(endTime - startTime), path));
+        LOGGER.info(String.format("%s millisecond taken to process the request %s.", (endTime - startTime), path));
     }
-
-
 
 
 }

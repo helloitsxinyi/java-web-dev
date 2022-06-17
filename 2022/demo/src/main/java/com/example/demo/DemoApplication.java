@@ -7,7 +7,8 @@ import com.example.demo.repo.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication; import org.springframework.context.ApplicationContext;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class DemoApplication {
             solist.add(s4);
             srepo.saveAllAndFlush(solist);
             ArrayList<Student> srlist = srepo.funnyNameOne("hamster");
-            for (Student s: srlist) {
+            for (Student s : srlist) {
                 System.out.println(s.toString());
             }
 
@@ -61,7 +62,7 @@ public class DemoApplication {
             lrepo.saveAndFlush(l5);
 
             ArrayList<Lecturer> lList = lrepo.queryByNickname("cranky");
-            for (Lecturer curr:lList) {
+            for (Lecturer curr : lList) {
                 System.out.println(curr.toString());
             }
         };

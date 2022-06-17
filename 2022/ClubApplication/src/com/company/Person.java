@@ -24,7 +24,7 @@ public class Person {
     }
 
     public void show() {
-    System.out.println(toString());
+        System.out.println(toString());
     }
 
     @Override
@@ -34,6 +34,6 @@ public class Person {
             name += " " + secondName;
         }
         name += " " + surname;
-       return name;
+        return name;
     }
 }

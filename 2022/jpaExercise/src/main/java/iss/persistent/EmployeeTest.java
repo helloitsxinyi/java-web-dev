@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class EmployeeTest {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         EntityManagerFactory emf =
                 Persistence.createEntityManagerFactory("JPA01");
         EntityManager em = emf.createEntityManager();

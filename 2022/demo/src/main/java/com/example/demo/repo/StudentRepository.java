@@ -1,5 +1,6 @@
 package com.example.demo.repo;
 // project runs on console, got
+
 import com.example.demo.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

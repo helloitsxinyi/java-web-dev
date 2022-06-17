@@ -45,7 +45,7 @@ public class BookController {
         List<Book> blist = brepo.findAll();
         // better to name books as bookslist or smt different to minimize confusion
         model.addAttribute("books", blist);
-        for (Book b: blist) {
+        for (Book b : blist) {
             System.out.println(b);
         }
         return "books";

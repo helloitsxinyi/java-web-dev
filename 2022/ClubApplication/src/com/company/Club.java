@@ -52,7 +52,7 @@ public class Club {
     public Member addMember(String surname, String firstName, String secondName) {
         Member newMember = new Member(surname, firstName, secondName, memberNumber);
         memberArrayList.add(newMember);
-        memberNumber+=1;
+        memberNumber += 1;
         return newMember;
     }
 

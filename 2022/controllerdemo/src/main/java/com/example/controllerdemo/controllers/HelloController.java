@@ -23,7 +23,7 @@ public class HelloController {
     @Autowired
     BookRepository brepo;
 
-//    localhost:8080/hello/welcome
+    //    localhost:8080/hello/welcome
     @GetMapping("/welcome")
     public String welcomeMethod(Model model) {
         Calendar calendar = Calendar.getInstance();
@@ -48,7 +48,7 @@ public class HelloController {
     // instead, use /hello/bookdetails/1
     // the {var} must be same as @PathVariable("var")
     @GetMapping("/bookdetails/{isbn}")
-    public String displayDetail(@PathVariable("isbn")String i1, Model model) {
+    public String displayDetail(@PathVariable("isbn") String i1, Model model) {
 //        impt to convert to i1
         Book b = (Book) brepo.findById(Integer.parseInt(i1)).get();
         model.addAttribute("book", b);

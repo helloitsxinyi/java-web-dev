@@ -28,7 +28,7 @@ class Compute {
 
                 // MUST use break keyword.
                 // This will stop the execution of more code and case testing inside the block. (ie proceed to other cases)
-                ans =  x.doubleValue() + y.doubleValue();
+                ans = x.doubleValue() + y.doubleValue();
                 break;
             case "minus":
                 ans = x.doubleValue() - y.doubleValue();
@@ -39,8 +39,8 @@ class Compute {
             case "div":
                 // 0 or 0.0 both work!
                 if (y.doubleValue() == 0) {
-                 ans = 0.0;
-                 break;
+                    ans = 0.0;
+                    break;
                 }
                 ans = x.doubleValue() / y.doubleValue();
                 break;

@@ -27,7 +27,7 @@ public class StudentUnitTests {
     @Order(1)
     public void testCreateSL() {
         Laptop l = new Laptop("TP", 2050.50);
-        Student s = new Student("student", "hi",5.0);
+        Student s = new Student("student", "hi", 5.0);
 
         s.setOwns(l);
         // should save even without injecting lrepo
@@ -41,7 +41,7 @@ public class StudentUnitTests {
     public void testCreateSL2() {
         Laptop l = new Laptop("TP", 2050.50);
         lrepo.save(l);
-        Student s = new Student("student", "hi",5.0);
+        Student s = new Student("student", "hi", 5.0);
         s.setOwns(l);
         srepo.saveAndFlush(s);
         System.out.println(s.toString());
