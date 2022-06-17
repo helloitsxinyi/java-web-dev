@@ -23,7 +23,7 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
     // public ArrayList<Student> funnyNameOne(String nickName);
 
     //named query style
-    @Query("from Student s where s.nickName = :nn")
+    @Query("select s from Student s where s.nickName = :nn")
     public ArrayList<Student> funnyNameOne(@Param("nn") String nickName);
 
     // // use native true if want to query in your own db eg heidi etc
