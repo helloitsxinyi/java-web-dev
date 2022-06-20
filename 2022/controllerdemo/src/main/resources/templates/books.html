@@ -8,6 +8,9 @@
 </head>
 <body>
 <h1> Welcome to Book Details </h1>
+<td><a href="AddBook.html" th:href="@{/book/add}">Add Book</td>
+<!--bc you have logout here. need to invalidate-->
+<h2>Welcome <span th:utext="${session.profile.user.username}"/></h2>
 <table>
     <th>
     <td> ISBN Number</td>
@@ -28,7 +31,9 @@
         <td><a href="DeleteBook.html" th:href="@{/book/delete/}+${book.isbn}"
                th:utext="#{book.delete}"> Delete</td>
     </tr>
+    <div>
+        <a href="Logout.html" th:href="@{/logout}"> Logout </a>
+    </div>
 </table>
-<button th:href="@{/book/add}">Add book</button>
 </body>
 

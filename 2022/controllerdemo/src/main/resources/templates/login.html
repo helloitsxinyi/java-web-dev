@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <form th:action="@{'/common/authenticate'}">
+    <form th:action="@{'/authenticate'}" th:object="${user}">
         <table class="framed">
             <tr>
                 <td><span th:text="#{fieldLabel.username}">Username</span></td>

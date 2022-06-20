@@ -12,6 +12,8 @@
 <!-- controller has to be called through action. use same var as the one in PostMapping. -->
 <!--    @ means URL-->
 <!--    method is get not post-->
+<!--use session obj-->
+<h2>Welcome <p th:utext="${session.profile.user.username}" /></h2>
 <form th:object="${book}" th:action="@{/book/save}" method="post">
     <!-- for every indiv field that you want to collect-->
     <fieldset>
