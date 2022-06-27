@@ -17,7 +17,7 @@ public class ProcessingTimeLogInterceptor {
         // donnid to remember for very long time so put in request
         request.setAttribute("startTime", startTime);
         // should see in console
-        LOGGER.warning("STARTS HERE");
+        LOGGER.severe("STARTS HERE");
 
         return true;
     }

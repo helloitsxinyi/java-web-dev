@@ -14,7 +14,7 @@
 <!--    method is get not post-->
 <!--use session obj-->
 <h2>Welcome <p th:utext="${session.profile.user.username}" /></h2>
-<form th:object="${book}" th:action="@{/book/save}" method="post">
+<form th:object="${book}" th:action="@{/book/save}" method="">
     <!-- for every indiv field that you want to collect-->
     <fieldset>
         <input type="hidden" th:field="*{isbn}">

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -18,6 +19,11 @@ public class BookController {
     //ok to autowire first, haven't service classes
     @Autowired
     BookRepository brepo;
+
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+
+    }
 
     // if return is a html page, string of file name will suffice.
     // if return type is another controller:
