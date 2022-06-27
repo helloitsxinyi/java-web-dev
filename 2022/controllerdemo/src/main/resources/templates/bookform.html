@@ -23,6 +23,7 @@
         <!--message to print on screen: #-->
         <p><span th:text=#{book.name}></p>
         <input type="text" th:field=*{name}/>
+        <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
     </fieldset>
     <fieldset>
         <p><span th:text=#{book.desc}></p>
@@ -31,6 +32,7 @@
     <fieldset>
         <p><span th:text=#{book.price}></p>
         <input type="text" th:field=*{price}/>
+        <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
     </fieldset>
     <input type="submit" value="Submit"/>
 </form>

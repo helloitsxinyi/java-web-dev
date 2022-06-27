@@ -14,6 +14,7 @@ public class ProcessingTimeLogInterceptor {
 
     public boolean preHandle(HttpServletRequest request, HttpServletRequest response, Object handler) {
         long startTime = System.currentTimeMillis();
+        // donnid to remember for very long time so put in request
         request.setAttribute("startTime", startTime);
         // should see in console
         LOGGER.warning("STARTS HERE");

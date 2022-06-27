@@ -5,9 +5,10 @@ import com.example.controllerdemo.repo.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -32,8 +33,11 @@ public class BookController {
         return "bookform";
     }
 
-    @GetMapping("/save")
-    public String saveForm(@ModelAttribute("book") Book b) {
+    @RequestMapping("/save")
+    public String saveForm(@ModelAttribute("book") @Valid Book b, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "bookform";
+        }
         brepo.save(b);
         // controller!! need requestMapping
         return "forward:/book/list";
