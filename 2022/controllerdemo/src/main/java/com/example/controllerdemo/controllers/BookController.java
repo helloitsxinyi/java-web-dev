@@ -25,6 +25,7 @@ public class BookController {
     private BookValidator bookValidator;
 
     // need to initbinder AND binding result for validator.
+    // bind validator to the controller
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
         binder.addValidators(bookValidator);
