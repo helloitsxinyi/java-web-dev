@@ -2,6 +2,7 @@ package com.example.controllerdemo.controllers;
 
 import com.example.controllerdemo.book.Book;
 import com.example.controllerdemo.repo.BookRepository;
+import com.example.controllerdemo.validator.BookValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,10 +19,15 @@ public class BookController {
 
     //ok to autowire first, haven't service classes
     @Autowired
-    BookRepository brepo;
+    private BookRepository brepo;
 
+    @Autowired
+    private BookValidator bookValidator;
+
+    // need to initbinder AND binding result for validator.
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
+        binder.addValidators(bookValidator);
 
     }
 
@@ -41,6 +47,7 @@ public class BookController {
 
     @RequestMapping("/save")
     public String saveForm(@ModelAttribute("book") @Valid Book b, BindingResult bindingResult, Model model) {
+        // always check if have errors if u have validator!!
         if (bindingResult.hasErrors()) {
             return "bookform";
         }
