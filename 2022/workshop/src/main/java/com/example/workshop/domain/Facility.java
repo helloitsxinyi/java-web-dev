@@ -8,7 +8,6 @@ import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
-@Data
 @ToString
 @Table(name="Facility")
 public class Facility {
@@ -26,6 +25,30 @@ public class Facility {
     public Facility(int facilityId, String name, String description) {
         this.facilityId = facilityId;
         this.name = name;
+        this.description = description;
+    }
+
+    public Integer getFacilityId() {
+        return facilityId;
+    }
+
+    public void setFacilityId(Integer facilityId) {
+        this.facilityId = facilityId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
         this.description = description;
     }
 }

@@ -18,14 +18,10 @@ public class Member {
     private String firstName;
     private String secondName;
     private String lastName;
-    private String username;
-    private String password;
 
-    public Member(String firstName, String secondName, String lastName, String username, String password) {
+    public Member(String firstName, String secondName, String lastName) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.lastName = lastName;
-        this.username = username;
-        this.password = password;
     }
 }

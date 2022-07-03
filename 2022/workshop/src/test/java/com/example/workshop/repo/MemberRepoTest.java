@@ -21,10 +21,10 @@ public class MemberRepoTest {
     @Test
     @Order(1)
     public void createMemberTest() {
-        Member m = new Member("Bob", "Jones", "Tan", "btan", "pwd");
-        Member m2 = new Member("Bobby", "Jones", "Lim", "blim", "pwd");
-        Member m3 = new Member("Bob", "Jones", "Lim", "boblim", "pwd");
-        Member m4 = new Member("Bobba", "Jones", "Too", "btoo", "pwd");
+        Member m = new Member("Bob", "Jones", "Tan");
+        Member m2 = new Member("Bobby", "Jones", "Lim");
+        Member m3 = new Member("Bob", "Jones", "Lim");
+        Member m4 = new Member("Bobba", "Jones", "Too");
         List<Member> mlist = new ArrayList<>();
         mlist.add(m);
         mlist.add(m2);
