@@ -4,19 +4,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
 @Data
 @ToString
+@Table(name="Member")
 public class Member {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int memberId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer memberId;
     private String firstName;
     private String secondName;
     private String lastName;
