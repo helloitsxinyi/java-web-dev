@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: headsection"></head>
+
+<body>
+<header th:replace="layout :: headermenu"></header>
+<!-- <div th:replace="fragments/layout.html :: Anotherheadermenu"> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+        	<br/>
+            <h2 th:utext="#{course.create.title}"></h2>
+            <br/>
+            <form method="post" th:action="@{/manage/course/save}" th:object="${course}">
+                <div class="row mb-3">
+                    <label for="courseCode" class="col-sm-3 col-form-label" th:text=#{course.courseCode}></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="courseCode" th:field="*{courseCode}">
+                        <p th:if="${#fields.hasErrors('courseCode')}" th:errors="*{courseCode}"></p>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="courseTitle" class="col-sm-3 col-form-label" th:text=#{course.courseTitle}></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="courseTitle" th:field="*{courseTitle}">
+                        <p th:if="${#fields.hasErrors('courseTitle')}" th:errors="*{courseTitle}"></p>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="courseDescription" class="col-sm-3 col-form-label" th:text=#{course.courseDescription}></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="courseDescription" th:field="*{courseDescription}">
+                        <p th:if="${#fields.hasErrors('courseDescription')}" th:errors="*{courseDescription}"></p>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="courseCredits" class="col-sm-3 col-form-label" th:text=#{course.courseCredits}></label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" id="courseCredits" th:field="*{courseCredits}">
+                        <p th:if="${#fields.hasErrors('courseCredits')}" th:errors="*{courseCredits}"></p>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="courseCapacity" class="col-sm-3 col-form-label" th:text=#{course.courseCapacity}></label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" id="courseCapacity" th:field="*{courseCapacity}">
+                        <p th:if="${#fields.hasErrors('courseCapacity')}" th:errors="*{courseCapacity}"></p>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="courseStatus" class="col-sm-3 col-form-label" th:text=#{course.courseStatus}></label>
+                    <div class="col-sm-9">
+                        <select class="form-select-lg mb-3" id="courseStatus" aria-label="Default select example" th:field="*{courseStatus}" >-->
+                            <option selected value="OPEN">Open</option>
+                            <option value="CLOSE">Close</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="courseLecturers" class="col-sm-3 col-form-label" th:text=#{course.courseLecturers}></label>
+                    <div class="col-sm-9">
+                        <select class="form-select-lg mb-3" id="courseLecturers" aria-label="Default select example" name="courseLecturerAdd" >
+                            <option selected value="">Select lecturer</option>
+                            <option th:each="lecturer:${lecturerList}" th:value="${lecturer.lecturerId}"th:text="${lecturer.firstName}+${lecturer.lastName}">
+                        </select>
+                    </div>
+                </div>
+                <input type="submit" value="Submit" class="btn btn-secondary"></input>
+                &nbsp; &nbsp;
+                <input type="reset" value="Reset" class="btn btn-secondary"></input>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+</body>
+
+<div th:replace="layout :: footersection"></div>
+
+</html>

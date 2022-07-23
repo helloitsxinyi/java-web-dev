@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/layout.html :: headsection"></head>
+
+<body>
+	<header th:replace="fragments/layout.html :: headermenu"></header>
+	<!-- <div th:replace="fragments/layout.html :: Anotherheadermenu"> -->
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+			<br/>
+			<h2 th:utext="#{lecturers.list.title}"></h2>
+			<br/>
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col" th:text=#{lecturers.list.lecturerId}></th>
+	      <th scope="col" th:text=#{lecturers.list.firstName}></th>
+	      <th scope="col" th:text=#{lecturers.list.lastName}></th>
+	      <th scope="col" th:text=#{lecturers.list.username}></th>
+	      <th scope="col" th:text=#{lecturers.list.email}></th>
+	      <th scope="col" th:text=#{lecturers.list.role}></th>
+	      <th scope="col" th:text=#{lecturers.list.status}></th>
+	      <th scope="col" th:text=#{lecturers.list.edit}></th>
+	      <th scope="col" th:text=#{lecturers.list.delete}></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr th:each="lecturer:${lecturerList}">
+	      <th scope="row" th:text=${lecturer.lecturerId}></th>
+	      <td th:text=${lecturer.firstName}></td>
+	      <td th:text=${lecturer.lastName}></td>
+	      <td th:text=${lecturer.username}></td>
+	      <td th:text=${lecturer.email}></td>
+	      <td th:text=${lecturer.role}></td>
+	      <td th:text=${lecturer.userStatus}></td>
+	      <td><a th:href="@{/manage/lecturer/edit/}+${lecturer.lecturerId}"> Edit </a></td>
+	      <td><a th:href="@{/manage/lecturer/delete/}+${lecturer.lecturerId}"> Delete </a></td>
+	    </tr>
+	  </tbody>
+</table>
+		
+		<div th:if = "${totalPages > 1}">
+						<div class = "row col-sm-10">
+						
+							<div class = "row-sm-2">
+								Total Rows: [[${totalItems}]] 
+							</div>
+							&nbsp; &nbsp;
+							<div class = "row-sm-1">
+								<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+									<a th:if="${currentPage != i}" th:href="@{'/manage/lecturer/page/' + ${i}}">[[${i}]]</a>
+									<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
+								</span>
+							</div>
+							
+							<div class = "row-sm-1">
+								<a th:if="${currentPage < totalPages}" th:href="@{'/manage/lecturer/page/' + ${currentPage + 1}}">Next</a>
+								<span th:unless="${currentPage < totalPages}">Next</span>
+							</div>
+							&nbsp;&nbsp;
+							 <div class="row-sm-1">
+			    				<a th:if="${currentPage < totalPages}" th:href="@{'/manage/lecturer/page/' + ${totalPages}}">Last</a>
+								<span th:unless="${currentPage < totalPages}">Last</span>
+			   				 </div>
+			   				 
+						</div>
+		</div>
+			</div>
+			<div class="row-1"></div>
+		</div>
+	</div>
+</body>
+
+<div th:replace="fragments/layout.html :: footersection"></div>
+
+</html>

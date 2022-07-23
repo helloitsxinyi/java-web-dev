@@ -1,0 +1,76 @@
+.login-side{
+	background-color:#696CFF;
+	height:100%;
+	min-height:500px;
+	color:white;
+	font-size:28px;
+	text-align:right;
+	padding-top:10%;
+	font-weight:300;
+}
+
+
+.login-input{
+	background-color:white;
+	height:100%;
+	padding-top:10%;
+	padding-left:10%;
+	font-size:20px;
+}
+
+.form-input-bar{
+	background-color:rgba(73, 73, 73, 0.3);
+	color:white;
+	padding:4px;
+	
+}
+.form-input-bar>span{
+	display:inline-block;
+	width:35px;
+	text-align:center;
+}
+.form-input-bar>input{
+	border:none;
+	background-color:transparent;
+	width:250px;
+}
+.form-input-bar>input:focus{
+	outline:none;
+}
+.form-input-bar>input::placeholder{
+	color:gainsboro;
+}
+.form-input-bar>input::-ms-input-placeholder {
+	color:gainsboro;
+}
+
+.form-input-bar>select{
+	border:none;
+	background-color:transparent;
+	width:250px;
+}
+.form-input-bar>select:focus{
+	outline:none;
+}
+.btn-row{
+	display:block;
+	width:300px;
+	text-align:center;
+}
+.btn-login{
+	width:110px;
+	border-radius:16px;
+}
+
+.form-forgetpw{
+	font-size:9px;
+}
+
+.reset-text{
+	font-size:14px;
+}
+.form-input-reset>span{
+	display:inline-block;
+	width:240px;
+	text-align:right;
+}

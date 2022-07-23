@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" th:href="@{/css/loginpage.css}" href="../static/css/loginpage.css" />
+<head th:replace="fragments/layout.html :: headsection"></head>
+
+<body>
+	<header th:replace="fragments/layout.html :: headermenu"></header>
+	<!-- <div th:replace="fragments/layout.html :: Anotherheadermenu"> -->
+		
+	<div class="container">
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<br/>
+				<h2 th:utext="#{student.grade.title}"></h2>
+				<br/>
+				<form method="post" th:object="${courseStudent}">
+					<input type="hidden" th:field="*{courseStudentId}" readonly/>
+	  				<div class="row mb-3">
+    					<label for="inputStudentId3" class="col-sm-3 col-form-label" th:text=#{student.grade.studentId}></label>
+    					<div class="col-sm-9">
+      						<input type="text" class="form-control" id="inputStudentId3" th:field="*{student.studentId}" readonly />
+    					</div>
+  					</div>
+  					<div class="row mb-3">
+    					<label for="inputFirstName3" class="col-sm-3 col-form-label" th:text=#{student.grade.firstName}></label>
+    					<div class="col-sm-9">
+      						<input type="text" class="form-control" id="inputFirstName3" th:field="*{student.firstName}" readonly/>
+    					</div>
+  					</div>
+  					<div class="row mb-3">
+    					<label for="inputLastName3" class="col-sm-3 col-form-label" th:text=#{student.grade.lastName}></label>
+    					<div class="col-sm-9">
+      						<input type="text" class="form-control" id="inputLastName3" th:field="*{student.lastName}" readonly/>
+    					</div>
+  					</div>
+  					<div class="row mb-3">
+    					<label for="inputCourseCode3" class="col-sm-3 col-form-label" th:text=#{student.grade.courseCode}></label>
+    					<div class="col-sm-9">
+      						<input type="text" class="form-control" id="inputCourseCode3" th:field="*{course.courseCode}" readonly/>
+    					</div>
+  					</div>
+					<input type="hidden" th:field="*{courseStudentStatus}" readonly/>
+  					<div class="row mb-3">
+    					<label for="inputGrade3" class="col-sm-3 col-form-label" th:text=#{student.grade.score}></label>
+    					<div class="col-sm-9">
+      						<input type="number" class="form-control" id="inputScore3" th:field="*{score}" min="0" max="100" required 
+      						placeholder="Enter score" oninvalid="this.setCustomValidity('Please enter score (0 - 100)')" 
+      						oninput="this.setCustomValidity('')">
+      						<p class="form-err" th:if="${#fields.hasErrors('score')}" th:errors="*{score}"></p>
+    					</div>
+  					</div>
+					<input type="submit" value="Submit" class="btn btn-secondary"></input>
+				</form>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</div>
+
+</body>
+
+<div th:replace="fragments/layout.html :: footersection"></div>
+
+</html>

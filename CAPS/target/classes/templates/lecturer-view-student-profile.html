@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/layout.html :: headsection"></head>
+
+<body>
+	<header th:replace="fragments/layout.html :: headermenu"></header>
+	<div class="container">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+				<br/>
+				<h2 th:utext="#{student.profile.title}"></h2>
+				<br/>
+				<table class="table">
+					<tr>
+						<td scope="col" th:text=#{student.profile.firstName}></td>
+						<td th:text="${student.firstName}"></td>
+					</tr>
+					<tr>
+						<td scope="col" th:text=#{student.profile.lastName}></td>
+						<td th:text="${student.lastName}"></td>
+					</tr>
+					<tr>
+						<td scope="col" th:text=#{student.profile.email}></td>
+						<td th:text="${student.email}"></td>
+					</tr>
+					<tr>
+						<td scope="col" th:text=#{student.profile.gpa}></td>
+						<td th:text="${gpa}"></td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+<div th:replace="fragments/layout.html :: footersection"></div>
+
+</html>

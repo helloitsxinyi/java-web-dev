@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/layout.html :: headsection">
+	<title>Course Application Processing System</title>
+	<!-- For input stylesheet -->
+	<!-- Using bootstrap 4.3.1 -->
+	<link th:rel="stylesheet" th:href="@{/external/bootstrap/css/bootstrap.min.css} " />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" href="../static/css/home.css" />
+</head>
+
+<body>
+	<!-- Menu section -->
+	<div th:replace="fragments/layout :: headermenu"></div>
+	<br>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+				<h2>Available Courses For <em>Student ID -</em> <em th:text="${studentId}"></em></h2>
+				<br>
+					<form th:action="@{/manage/studentcourse/search/}+${studentId}" method="get">
+						<div class="form-group row">
+							<div class="col-xs-3">
+								<input type="text" placeholder="Search.."
+									th:value="${searchStr != null}? ${searchStr} : '' " name="searchCourse"
+									class="form-control">
+							</div>
+							<button type="submit" class="btn btn-secondary">Search</button>
+						</div>
+					</form>
+				<br>
+				<table class="table">
+					<tr>
+						<th scope="col" th:text=#{student.CourseReg.courseCode}></th>
+						<th scope="col" th:text=#{student.CourseReg.CourseTitle}></th>
+						<th scope="col" th:text=#{student.CourseReg.Description}></th>
+						<th scope="col" th:text=#{student.CourseReg.Credits}></th>
+						<th scope="col" th:text=#{student.CourseReg.Capacity}></th>
+						<th scope="col" th:text=#{student.CourseReg.Status}></th>
+						<th scope="col" th:text=#{student.CourseReg.Register}></th>
+					</tr>
+					<tr th:each="course:${availableCourses}" class="table-row">
+						<td th:text="${course.courseCode}"></td>
+						<td th:text="${course.courseTitle}"></td>
+						<td th:text="${course.courseDescription}"></td>
+						<td th:text="${course.courseCredits}"></td>
+						<td th:text="${course.courseCapacity}"></td>
+						<td th:text="${course.courseStatus}"></td>
+						<td><a
+								th:href="@{/manage/studentcourse/enroll/}+${studentId}+'/'+${course.courseCode}">Enroll</a>
+						</td>
+					</tr>
+				</table>
+				
+				<div th:if="${totalPages != null and totalPages > 1 and searchStr == null}">
+					<div class="row col-sm-10">
+
+						<div class="row-sm-2">
+							Total Rows: [[${totalItems}]]
+						</div>
+						&nbsp; &nbsp;
+						<div class="row-sm-1">
+							<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+								<a th:if="${currentPage != i}" th:href="@{/manage/studentcourse/available-course-list/{studentId}(studentId=${studentId},pageNo=${i})}">[[${i}]]</a>
+								<span th:unless="${currentPage != i}">[[${i}]]</span> &nbsp; &nbsp;
+							</span>
+						</div>
+
+						<div class="row-sm-1">
+							<a th:if="${currentPage < totalPages}"
+								th:href="@{/manage/studentcourse/available-course-list/{studentId}(studentId=${studentId},pageNo=${currentPage + 1})}">Next</a>
+							<span th:unless="${currentPage < totalPages}">Next</span>
+						</div>
+						&nbsp;&nbsp;
+						<div class="row-sm-1">
+							<a th:if="${currentPage < totalPages}"
+								th:href="@{/manage/studentcourse/available-course-list/{studentId}(studentId=${studentId},pageNo=${totalPages})}">Last</a>
+							<span th:unless="${currentPage < totalPages}">Last</span>
+						</div>
+
+					</div>
+				</div>
+				
+				<div th:if="${totalPages != null and totalPages > 1 and searchStr != null}">
+					<div class="row col-sm-10">
+
+						<div class="row-sm-2">
+							Total Rows: [[${totalItems}]]
+						</div>
+						&nbsp; &nbsp;
+						<div class="row-sm-1">
+							<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+								<a th:if="${currentPage != i}" th:href="@{/manage/studentcourse/search/{studentId}(studentId=${studentId},pageNo=${i},searchCourse=${searchStr})}">[[${i}]]</a>
+								<span th:unless="${currentPage != i}">[[${i}]]</span> &nbsp; &nbsp;
+							</span>
+						</div>
+
+						<div class="row-sm-1">
+							<a th:if="${currentPage < totalPages}"							
+								th:href="@{/manage/studentcourse/search/{studentId}(studentId=${studentId},pageNo=${currentPage + 1},searchCourse=${searchStr})}">Next</a>
+							<span th:unless="${currentPage < totalPages}">Next</span>
+						</div>
+						&nbsp;&nbsp;
+						<div class="row-sm-1">
+							<a th:if="${currentPage < totalPages}"
+								th:href="@{/manage/studentcourse/search/{studentId}(studentId=${studentId}, pageNo=${totalPages}, searchCourse=${searchStr})}">Last</a>
+							<span th:unless="${currentPage < totalPages}">Last</span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+
+
+
+	<div th:replace="fragments/layout :: footersection"></div>
+
+</body>
+<footer>
+
+
+</footer>
+
+
+</html>

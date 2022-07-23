@@ -1,0 +1,47 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- For input stylesheet -->
+	<!-- Using bootstrap 4.3.1 -->
+	<link th:rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css} " />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" href="../static/css/home.css" />
+	<script type="text/javascript" th:src="@{/scripts/home.js}" src="../static/scripts/home.js"></script>
+	<title>Student List</title>
+</head>
+
+<body>
+	<header th:replace="fragments/layout.html :: headermenu"></header>
+	<div class="container">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+				<br/>
+				<h2 th:utext="#{student.profile.title}"></h2>
+				<br/>
+				<table class="table">
+					<tr>
+						<td scope="col" th:text=#{student.profile.firstName}></td>
+						<td th:text="${student.firstName}"></td>
+					</tr>
+					<tr>
+						<td scope="col" th:text=#{student.profile.lastName}></td>
+						<td th:text="${student.lastName}"></td>
+					</tr>
+					<tr>
+						<td scope="col" th:text=#{student.profile.email}></td>
+						<td th:text="${student.email}"></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<a th:href="@{/student/profile-edit}">Edit</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+<div th:replace="fragments/layout.html :: footersection"></div>
+
+</html>

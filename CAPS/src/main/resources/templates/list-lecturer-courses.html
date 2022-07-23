@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/layout.html :: headsection"></head>
+
+<body>
+	<header th:replace="fragments/layout.html :: headermenu"></header>
+	<!-- <div th:replace="fragments/layout.html :: Anotherheadermenu"> -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+			<br/>
+			<h2 th:if="${!showEnrollment}" th:utext="#{lecturer.courses.list.title}"></h2>
+			<h2 th:if="${showEnrollment}" th:utext="#{lecturer.courses.list.enrollment}"></h2>
+
+			<br/>
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col" th:text=#{lecturer.courses.list.courseCode}></th>
+	      <th scope="col" th:text=#{lecturer.courses.list.courseTitle}></th>
+	      <th scope="col" th:text=#{lecturer.courses.list.status}></th>
+  	      <th th:if="${showEnrollment}" scope="col" th:text=#{course.enrollment.list.enrollment}></th>
+	      <th th:if="${showEnrollment}" scope="col" th:text=#{course.enrollment.list.capacity}></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr th:each="course:${teachCoursesList}">
+	      <td th:text=${course.courseCode}> </td>
+	      <td th:text=${course.courseTitle}></td>
+	      <td th:text=${course.courseStatus}></td>
+	      <td th:if="${showEnrollment}" th:text=${course.courseStudents.size()}></td>
+	      <td th:if="${showEnrollment}" th:text=${course.courseCapacity}></td>
+	    </tr>
+	  </tbody>
+</table>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+
+<div th:replace="fragments/layout.html :: footersection"></div>
+
+</html>

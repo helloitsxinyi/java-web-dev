@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout.html :: headsection">
+	<link th:rel="stylesheet" th:href="@{/external/bootstrap/css/bootstrap.min.css} "/>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" href="../static/css/home.css"/>
+	<script type="text/javascript" th:src="@{/scripts/home.js}" src="../static/scripts/home.js"></script>
+
+</head>
+<body>
+	<header th:replace="fragments/layout.html :: headermenu"></header>
+	<!-- <div th:replace="fragments/layout.html :: Anotherheadermenu"> -->
+		
+	<div class="container">
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<br/>
+				<h2 th:utext="#{student.create.title}"></h2>
+				<br/>
+				<form method="post" th:object="${student}">
+					<input type="hidden" th:field="*{studentId}"/>
+					
+	  				<div class="row mb-3">
+    					<label for="inputFirstName3" class="col-sm-3 col-form-label" th:text=#{student.create.firstName}></label>
+    					<div class="col-sm-9">
+      						<input type="text" class="form-control" id="inputFirstName3" th:field="*{firstName}">
+      						<p class="form-err" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+    					</div>
+  					</div>
+  					
+  					<div class="row mb-3">
+    					<label for="inputLastName3" class="col-sm-3 col-form-label" th:text=#{student.create.lastName}></label>
+    					<div class="col-sm-9">
+      						<input type="text" class="form-control" id="inputLastName3" th:field="*{lastName}">
+      						<p class="form-err" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+    					</div>
+  					</div>
+  					
+  					<div class="row mb-3">
+    					<label for="inputEmail3" class="col-sm-3 col-form-label" th:text=#{student.create.email}></label>
+    					<div class="col-sm-9">
+      						<input type="email" class="form-control" id="inputEmail3" th:field="*{email}">
+      						<p class="form-err" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+    					</div>
+  					</div>
+  					
+  					<div class="row mb-3">
+    					<label for="inputUsername3" class="col-sm-3 col-form-label" th:text=#{student.create.username}></label>
+    					<div class="col-sm-9">
+      						<input th:if="${action} == 'create'" type="text" class="form-control" id="inputUsername3" th:field="*{username}">
+      						<input th:if="${action} == 'edit'" type="text" class="form-control" id="inputUsername3" th:field="*{username}" readonly>
+      						<p class="form-err" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+    					</div>
+  					</div>
+<!--  					
+				<div class="row mb-3">
+			            <input type="text"  th:field="*{enrolledDate}">
+        			</div>-->
+  					
+					<input type="submit" value="Submit" class="btn btn-secondary"></input>
+<!--					&nbsp; &nbsp; 	
+					<input type="reset" value="Reset" class="btn btn-secondary"></input>-->
+				</form>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</div>
+
+</body>
+
+<div th:replace="fragments/layout.html :: footersection"></div>
+</html>

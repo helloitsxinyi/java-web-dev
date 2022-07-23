@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>Front page for Course Application Processing System</title>
+		<!-- For input stylesheet -->
+		<!-- Using bootstrap 4.3.1 -->
+		<link th:rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css} "/>
+		<link th:rel="stylesheet" th:href="@{/fontawesome/css/all.min.css} "/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/loginpage.css}"/>
+		<script type="text/javascript" th:src="@{/scripts/home.js}" src="../static/scripts/home.js"></script>
+	</head>
+	
+	<body>
+		<!-- Menu section -->
+		<div th:replace="~{layout :: headermenu}"></div>
+		<br>
+		<div class="container">
+			<div class="row">
+				<div class="col-4 login-side">
+					<p th:text=#{login.title.row1}></p>
+					<p th:text=#{login.title.row2}></p>
+					<p th:text=#{login.title.row3}></p>
+					<p th:text=#{login.title.row4}></p>
+				</div>
+				<div class="col-8 login-input">
+					
+					
+					<form action="#" th:object="${account}" th:action="@{/login/authenticate}" method="post">
+						
+						<div class="form-group row">
+							<div ><b>Login</b></div>
+							<div class="w-100" th:if="${repeatlogin}"></div>
+							<div class="form-err" th:if="${repeatlogin}">*Incorrect Username or password</div>
+						</div>
+						
+						
+						<fieldset>
+						<div class="form-group row">
+							<div class="form-input-bar">
+								<span><i class="fa fa-regular fa-link"></i></span>
+								<select th:field="*{domain}">
+									<option th:value="'STUDENT'" th:text="STUDENT"></option>
+								 	<option th:value="'LECTURER'" th:text="LECTURER"></option>
+								 	<option th:value="'ADMIN'" th:text="ADMIN"></option>
+								</select>
+							</div>
+							
+						</div>
+						</fieldset>
+						
+						<fieldset>
+						<div class="form-group row">
+							<div class="form-input-bar">
+								<span><i class="fa fa-regular fa-user"></i></span>
+								<input  type="text" placeholder="Username" th:field="*{username}" />
+								
+							</div>
+							<div class="w-100" th:if="${#fields.hasErrors('username')}"></div>
+							<div class="form-err"th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
+						</div>
+						</fieldset>
+						
+						<fieldset>
+						<div class="form-group row">
+							<div class="form-input-bar">
+								<span><i class="fa fa-regular fa-lock"></i></span>
+								<input  type="password" placeholder="Password" th:field="*{password}" />
+								
+							</div>
+							<div class="w-100" th:if="${#fields.hasErrors('password')}"></div>
+							<div class="form-err"th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+						</div>
+						</fieldset>
+						
+						<div class="form-group row">
+							<div class="form-forgetpw"><a th:href="@{/login/forget-password/}">Forget Password</a></div>
+						</div>
+						
+						<fieldset>
+						<div class="form-group row btn-row">
+							<button type="submit" class="btn btn-dark btn-login">Enter</button>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<div th:replace="~{layout :: footersection}"></div>
+	</body>
+	
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head th:fragment="headsection">
+	<title>Front page for Course Application Processing System</title>
+	<!-- For input stylesheet -->
+	<!-- Using bootstrap 4.3.1 -->
+	<link th:rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css} " />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" href="../static/css/home.css" />
+	<script type="text/javascript" th:src="@{/scripts/home.js}" src="../static/scripts/home.js"></script>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-sm bg-light navbar-light" th:fragment="headermenuold">
+		<a class="navbar-brand" th:href="@{/home}">CAPS</a>
+
+		<ul class="navbar-nav" th:if="${headerbar == null}">
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/home}">Home</a>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link  dropdown-toggle" th:href="@{/student-management/liststudents}"
+					data-bs-toggle="dropdown"> Manage Student </a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" th:href="@{/student-management/liststudents}"> List Student </a></li>
+					<li><a class="dropdown-item" th:href="@{/student-management/create}"> Add Student </a></li>
+
+				</ul>
+
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link  dropdown-toggle" th:href="@{/lecturer-management/list}" data-bs-toggle="dropdown">
+					Manage Lecturer </a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" th:href="@{/lecturer-management/list}"> List Lecturer </a></li>
+					<li><a class="dropdown-item" th:href="@{/lecturer-management/create}"> Add Lecturer </a></li>
+
+				</ul>
+
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link  dropdown-toggle" th:href="@{/course/list}" data-bs-toggle="dropdown"> Manage Courses
+				</a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" th:href="@{/course/list}"> List Courses </a></li>
+					<li><a class="dropdown-item" th:href="@{/course/create}"> Add Courses </a></li>
+
+				</ul>
+
+			</li>
+		</ul>
+
+		<div style="text-align:right;width:auto;">
+			<ul class="navbar-nav" th:if="${headerbar != null and not #lists.isEmpty(headerbar.headerList)}">
+				<li class="nav-item" th:each="header : ${headerbar.headerList}">
+					<a class="nav-link" th:href="@{{path}(path=${header.path})}" th:text="${header.text}"></a>
+				</li>
+			</ul>
+		</div>
+
+		<!--Wellcome Back Sign-->
+		<h2 th:if="${not #strings.isEmpty(usession)}"><em
+				th:utext="'Wellcome Back '+ ${session.usession.user.name}"></em></h2>
+	</nav>
+
+
+
+	<div th:fragment="headermenu">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/navigation-menu.css}" />
+
+		<nav class="navbar navbar-expand-md navbar-light bg-light firstmenu">
+		<!--
+			<div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/home}"><span class="app-title">CAPS</span></a>
+					</li>
+
+				</ul>
+			</div>
+			
+			
+			<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item" th:if="${NavMenu != null}">
+						<span class="nav-link"
+							th:text="'Welcome, ' + ${NavMenu.name} + ' [' + ${NavMenu.role} + ']'"></span>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/logout}" th:if="${NavMenu != null}">Logout</a>
+						<a class="nav-link" th:href="@{/login}" th:if="${NavMenu == null}">Login</a>
+					</li>
+				</ul>
+			</div>
+		-->
+			<a class="navbar-brand" th:href="@{/home}">CAPS</a>
+			
+			<ul class="navbar-nav ml-auto" >
+				<li class="nav-item" th:if="${NavMenu != null}">
+					Welcome,&nbsp
+					<em th:utext="${NavMenu.name}"></em>&nbsp
+					[<em th:utext=${NavMenu.role}></em>]
+				</li>
+				<li>&nbsp</li>
+				<li class="nav-item">
+					<a  th:href="@{/logout}" th:if="${NavMenu != null}">Logout</a>
+					<a  th:href="@{/login}" th:if="${NavMenu == null}">Login</a>
+				</li>
+			</ul>
+		</nav>
+		<!--
+		<div style="line-height:50%">
+			<br>
+		</div>
+		-->
+		<div  th:if="${NavMenu != null}">
+			<div th:if="${#strings.equals(NavMenu.role, 'ADMIN')}">
+			 <div class="container-fluid">
+				<nav class="navbar navbar-expand-sm navbar-light bg-light">
+					 
+					<div class="navbar-collapse collapse justify-content-center secondmenu">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/student-management/list}">Manage&nbspStudents</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/lecturer-management/list}">Manage&nbspLecturers</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/course/list}">Manage&nbspCourses</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/manageEnrollment}">Manage&nbspEnrollment</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/logout}">Log&nbspOut</a>
+							</li>
+						</ul>
+					</div>
+					
+				</nav>
+			</div>
+			</div>
+			<div th:if="${#strings.equals(NavMenu.role, 'STUDENT')}">
+				<nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-center secondmenu">
+
+
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/viewGrades}">Grades and GPA</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/viewCourses}">View Courses</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/student/course-registration}">Enroll for a Course</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/logout}">Log&nbspOut</a>
+						</li>
+					</ul>
+
+				</nav>
+			</div>
+			<div th:if="${#strings.equals(NavMenu.role, 'LECTURER')}">
+				<nav class="navbar navbar-expand-sm navbar-light bg-light">
+
+					<div class="navbar-collapse collapse justify-content-center secondmenu">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/viewCoursesTaught}">View Courses Taught</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/viewCourseEnrollment}">View Courses Enrollment</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/gradeACourse}">Grade a Course</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/viewStudentPerformance}">View Student Performance</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/logout}">Log&nbspOut</a>
+							</li>
+						</ul>
+					</div>
+
+				</nav>
+			</div>
+		</div>
+	</div>
+
+
+	<div th:fragment="footersectionold">
+	</div>
+
+	<footer class="text-center py-4 text-muted" th:fragment="footersection">
+		Course Application Processing System CAPS Copyright&copy; 2022
+	</footer>
+
+</body>
+
+</html>

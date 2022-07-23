@@ -1,0 +1,95 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/layout.html :: headsection">
+	<!-- For input stylesheet -->
+	<!-- Using bootstrap 4.3.1 -->
+	<link th:rel="stylesheet" th:href="@{/external/bootstrap/css/bootstrap.min.css} " />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" href="../static/css/home.css" />
+	<script type="text/javascript" th:src="@{/scripts/home.js}" src="../static/scripts/home.js"></script>
+	<title>Student List</title>
+</head>
+
+<body>
+	<header th:replace="fragments/layout.html :: headermenu"></header>
+	<div class="container">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-11">
+				<br />
+				<h2 th:utext="#{course.list.title}"></h2>
+				<br />
+				<table class="table">
+					<tr>
+						<th scope="col" th:text=#{course.list.courseCode}></th>
+						<th scope="col" th:text=#{course.list.courseTitle}></th>
+						<th scope="col" th:text=#{course.list.courseDescription}></th>
+						<th scope="col" th:text=#{course.list.courseCredits}></th>
+						<th scope="col" th:text=#{course.list.courseCapacity}></th>
+						<th scope="col" th:text=#{course.list.courseEnrolled}></th>
+						<th scope="col" th:text=#{course.list.courseStatus}></th>
+						<th class="col-2" scope="col" th:text=#{course.list.Lecturers}></th>
+						<th scope="col" th:text=#{course.list.Edit}></th>
+
+						<th scope="col">Delete</th>
+
+					</tr>
+					<tr th:each="course:${courseList}" class="table-row">
+						<td th:text="${course.courseCode}"></td>
+						<td th:text="${course.courseTitle}"></td>
+						<td th:text="${course.courseDescription}"></td>
+						<td th:text="${course.courseCredits}"></td>
+						<td th:text="${course.courseCapacity}"></td>
+						
+						<td th:text="${#lists.size(course.courseStudents)} + ${#lists.size(course.courseStudents) >= course.courseCapacity? ' (Full)' : ''}"></td>
+						<td th:text="${course.courseStatus}"></td>
+						<td>
+							<span th:each="lecturer:${course.courseLecturers}"
+								th:text="${lecturer.firstName}+' '+${lecturer.lastName}+';&#10;&#13;'">ID</span>
+						</td>
+
+						<td><a href="EditCourse.html"
+								th:href="@{${ReactLink} + '/manage/course/edit/'+${course.courseCode}}"
+								th:utext="#{course.page.edit}"> Edit Course Details</a></td>
+
+						<td><a th:if="${#lists.isEmpty(course.courseStudents)}" href="DeleteCourse.html"
+								th:href="@{/manage/course/delete/}+${course.courseCode}"
+								th:utext="#{course.page.delete}"> Delete Course </a></td>
+
+					</tr>
+				</table>
+				<div th:if="${totalPages > 1}">
+					<div class="row col-sm-10">
+
+						<div class="row-sm-2">
+							Total Rows: [[${totalItems}]]
+						</div>
+						&nbsp; &nbsp;
+						<div class="row-sm-1">
+							<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+								<a th:if="${currentPage != i}" th:href="@{'/manage/course/page/' + ${i}}">[[${i}]]</a>
+								<span th:unless="${currentPage != i}">[[${i}]]</span> &nbsp; &nbsp;
+							</span>
+						</div>
+
+						<div class="row-sm-1">
+							<a th:if="${currentPage < totalPages}"
+								th:href="@{'/manage/course/page/' + ${currentPage + 1}}">Next</a>
+							<span th:unless="${currentPage < totalPages}">Next</span>
+						</div>
+						&nbsp;&nbsp;
+						<div class="row-sm-1">
+							<a th:if="${currentPage < totalPages}"
+								th:href="@{'/manage/course/page/' + ${totalPages}}">Last</a>
+							<span th:unless="${currentPage < totalPages}">Last</span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+<div th:replace="fragments/layout.html :: footersection"></div>
+
+</html>

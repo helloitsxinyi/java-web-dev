@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" th:href="@{/css/loginpage.css}" href="../static/css/loginpage.css" />
+<head th:replace="fragments/layout.html :: headsection"></head>
+
+<body>
+	<header th:replace="fragments/layout.html :: headermenu"></header>
+		
+	<div class="container">
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6">
+				<br/>
+				<h2 th:utext="#{lecturer.create.title}"></h2>
+				<br/>
+				<form method="post" th:object="${lecturer}">
+					<input type="hidden" th:field="*{lecturerId}" readonly/>
+	  				<div class="row mb-3">
+    					<label for="inputFirstName3" class="col-sm-3 col-form-label" th:text=#{lecturer.create.firstName}></label>
+    					<div class="col-sm-9">
+      						<input type="text" class="form-control" id="inputFirstName3" th:field="*{firstName}">
+      						<p class="form-err" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+    					</div>
+  					</div>
+  					<div class="row mb-3">
+    					<label for="inputLastName3" class="col-sm-3 col-form-label" th:text=#{lecturer.create.lastName}></label>
+    					<div class="col-sm-9">
+      						<input type="text" class="form-control" id="inputLastName3" th:field="*{lastName}">
+      						<p class="form-err" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+    					</div>
+  					</div>
+  					<div class="row mb-3">
+    					<label for="inputEmail3" class="col-sm-3 col-form-label" th:text=#{lecturer.create.email}></label>
+    					<div class="col-sm-9">
+      						<input type="email" class="form-control" id="inputEmail3" th:field="*{email}">
+      						<p class="form-err" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+    					</div>
+  					</div>
+  					<div class="row mb-3">
+    					<label for="inputUsername3" class="col-sm-3 col-form-label" th:text=#{lecturer.create.username}></label>
+    					<div class="col-sm-9">
+      						<input th:if="${action} == 'create'" type="text" class="form-control" id="inputUsername3" th:field="*{username}">
+      						<input th:if="${action} == 'edit'" type="text" class="form-control" id="inputUsername3" th:field="*{username}" readonly>
+      						<p class="form-err" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+    					</div>
+  					</div>
+ 					<!--<div class="row mb-3">
+    					<label for="inputPasswordHash3" class="col-sm-3 col-form-label">Password</label>
+    					<div class="col-sm-9">
+      						<input type="text" class="form-control" id="inputPasswordHash3" th:field="*{passwordHash}">
+      						<p th:if="${#fields.hasErrors('passwordHash')}" th:errors="*{passwordHash}"></p>
+    					</div>
+  					</div> 
+  					<div class="row mb-3">
+    					<label for="inputRole3" class="col-sm-3 col-form-label">Role</label>
+    					<div class="col-sm-9">
+      						<input type="text" class="form-control" id="inputRole3" th:field="*{role}" placeholder="LECTURER" value="LECTURER" readonly>
+    					</div>
+  					</div>
+  					<div class="row mb-3">
+    					<label for="inputUserStatus3" class="col-sm-3 col-form-label">Status</label>
+    					<div class="col-sm-9">
+      						<select class="form-select-lg mb-3" aria-label="Default select example" th:field="*{userStatus}" >
+      							<option selected value="ACTIVE">Active</option>
+      							<option value="INACTIVE">Inactive</option>
+      						</select>
+    					</div>
+  					</div>-->
+					<input type="submit" value="Submit" class="btn btn-secondary"></input>
+					&nbsp; &nbsp; 	
+				<!--	<input type="reset" value="Reset" class="btn btn-secondary"></input>-->
+					<input th:if="${action} == 'create'" type="reset" value="Reset" class="btn btn-secondary"/>
+      				<input th:if="${action} == 'edit'"  type="hidden" value="Reset" class="btn btn-secondary"/>
+				</form>
+			</div>
+			<div class="col-3"></div>
+		</div>
+	</div>
+
+</body>
+
+<div th:replace="fragments/layout.html :: footersection"></div>
+
+</html>

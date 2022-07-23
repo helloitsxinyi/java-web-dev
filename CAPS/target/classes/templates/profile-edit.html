@@ -1,0 +1,85 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- For input stylesheet -->
+	<!-- Using bootstrap 4.3.1 -->
+<link th:rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css} " />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" href="../static/css/home.css" />
+	<script type="text/javascript" th:src="@{/scripts/home.js}" src="../static/scripts/home.js"></script>
+	<title>Student List</title>
+</head>
+
+<body>
+	<header th:replace="fragments/layout.html :: headermenu"></header>
+	<div class="container">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+				<br/>
+				<h2 th:utext="#{profile.edit.title}"></h2>
+				<br/>
+				<form th:action="@{/student/profile-update}" th:object="${student}" method="get">
+					<table class="table">
+						<tr>
+							<td scope="col" th:text=#{profile.edit.firstName}></td>
+							<td>
+								<fieldset>
+									<input type="text" th:field="*{firstName}" />
+								</fieldset>
+							</td>
+							<td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></td>
+						</tr>
+						<tr>
+							<td scope="col" th:text=#{profile.edit.lastName}></td>
+							<td>
+								<fieldset>
+									<input type="text" th:field="*{lastName}" />
+								</fieldset>
+							</td>
+							<td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></td>
+						</tr>
+						<tr>
+							<td scope="col" th:text=#{profile.edit.email}></td>
+							<td>
+								<fieldset>
+									<input type="text" th:field="*{email}" />
+								</fieldset>
+							</td>
+							<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+						</tr>
+						<!--<tr>
+							<td scope="col">Username</td>
+							<td>
+								<fieldset>
+									<input type="text" th:field="*{username}" />
+								</fieldset>
+							</td>
+							<td th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></td>
+						</tr>-->
+						<fieldset>
+							<input type="hidden" th:field="*{passwordHash}"/>
+						</fieldset>
+						<fieldset>
+							<input type="hidden" th:field="*{username}"/>
+						</fieldset>
+						<fieldset>
+							<input type="hidden" th:field="*{studentId}"/>
+						</fieldset>
+						
+						<tr>
+							<td colspan="2">
+								<fieldset>
+									<input type="submit" value="Update" class="btn btn-secondary"/>
+								</fieldset>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+<div th:replace="fragments/layout.html :: footersection"></div>
+
+</html>

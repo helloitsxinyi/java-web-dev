@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head th:fragment="headsection">
+		<title>Course Application Portal</title>
+		<link th:rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css} "/>
+		<link th:rel="stylesheet" th:href="@{/fontawesome/css/all.min.css} "/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/homepage.css}" href="../static/css/homepage.css"/>
+		<script type="text/javascript" th:src="@{/scripts/home.js}" src="../static/scripts/home.js"></script>
+	</head>
+	
+	<body>
+		<div th:replace="fragments/layout :: headermenu"></div>
+		<h1>Course Application Portal</h1>
+		<div class="container">
+			</div> class="row">
+				<div class="col-4 login-side">
+					<p>Start</p>
+					<p>Your</p>
+					<p>Journey</p>
+				</div>
+				
+					<form action="#" th:action="@{/makeoptions}" th:object="${users}" method="post">
+						<fieldset>
+							<select th:field="*{domain}">
+									<option th:value="'Our Courses'" th:text="Our Courses"></option>
+								 	<option th:value="'Contacts'" th:text="Contacts"></option>
+								 	<option th:value="'Others'" th:text="Others"></option>
+								</select>
+						</fieldset>
+					</form>
+					
+				<div th:fragment="copy"> &copy; 2022 Course Application Systems CAPS Copyright</div>
+			</div>
+		<div th:replace="fragments/layout :: footersection"></div>
+	</body>
+</html>
+	

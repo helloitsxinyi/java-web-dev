@@ -1,0 +1,77 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/layout.html :: headsection"></head>
+
+<head>
+		<!-- For input stylesheet -->
+		<!-- Using bootstrap 4.3.1 -->
+	<link th:rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css} "/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" href="../static/css/home.css"/>
+		<script type="text/javascript" th:src="@{/scripts/home.js}" src="../static/scripts/home.js"></script>
+<title>Student List</title>
+</head>
+
+<body>
+	<header th:replace="fragments/layout.html :: headermenu"></header>
+	<div class="container">
+		<div class="row">
+			<div class="col-1"></div>
+				<div class="col-10">
+				<br/>
+				<h2 th:utext="#{students.list.title}"></h2>
+				<br/>
+					<table class="table">
+						 <tr>
+						   	<th scope="col" th:text=#{students.list.studentId}></th>
+							<th scope="col" th:text=#{students.list.firstName}></th>
+							<th scope="col" th:text=#{students.list.lastName}></th>
+							<th scope="col" th:text=#{students.list.username}></th>
+							<th scope="col" th:text=#{students.list.email}></th>
+							<th scope="col" th:text=#{students.list.role}></th>
+							<th scope="col" th:text=#{students.list.enrolledDate}></th>
+							<th scope="col" th:text=#{students.list.edit}></th>
+							<th scope="col" th:text=#{students.list.delete}></th>
+						 </tr>
+						 <tr th:each="student:${studentList}" class="table-row">
+						 	<td th:text="${student.studentId}">ID</td> 
+						   	<td th:text="${student.firstName}">ID</td> 
+						   	<td th:text="${student.lastName}">ID</td>
+						   	<td th:text="${student.username}">ID</td>
+						   	<td th:text="${student.email}">ID</td>
+						   	<td th:text="${student.role}">ID</td>
+							<td th:text="${#dates.format(student.enrolledDate, 'dd-MM-yyyy')}">ID</td>
+						   	<td><a href="EditProduct.html" th:href="@{/manage/student/edit/}+${student.studentId}" th:utext="#{student.page.edit}"> Edit </a></td>
+							<td><a href="DeleteProduct.html" th:href="@{/manage/student/delete/}+${student.studentId}" th:utext="#{student.page.delete}"> Delete </a></td>
+						 </tr>
+					</table>
+					<div th:if = "${totalPages > 1}">
+						<div class = "row col-sm-10">
+						
+							<div class = "row-sm-2">
+								Total Rows: [[${totalItems}]] 
+							</div>
+							&nbsp; &nbsp;
+							<div class = "row-sm-1">
+								<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+									<a th:if="${currentPage != i}" th:href="@{'/manage/student/page/' + ${i}}">[[${i}]]</a>
+									<span th:unless="${currentPage != i}">[[${i}]]</span>  &nbsp; &nbsp;
+								</span>
+							</div>
+							
+							<div class = "row-sm-1">
+								<a th:if="${currentPage < totalPages}" th:href="@{'/manage/student/page/' + ${currentPage + 1}}">Next</a>
+								<span th:unless="${currentPage < totalPages}">Next</span>
+							</div>
+							&nbsp;&nbsp;
+							 <div class="row-sm-1">
+			    				<a th:if="${currentPage < totalPages}" th:href="@{'/manage/student/page/' + ${totalPages}}">Last</a>
+								<span th:unless="${currentPage < totalPages}">Last</span>
+			   				 </div>
+						</div>
+					</div>
+				</div>
+				<div class="row-1"></div>
+		</div>
+	</div>
+</body>
+<div th:replace="fragments/layout.html :: footersection"></div>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/layout.html :: headsection">
+	<title>Course Application Processing System</title>
+	<!-- For input stylesheet -->
+	<!-- Using bootstrap 4.3.1 -->
+	<link th:rel="stylesheet" th:href="@{/external/bootstrap/css/bootstrap.min.css} " />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" href="../static/css/home.css" />
+	<script type="text/javascript" th:src="@{/scripts/CourseRegister.js}"
+		src="../static/scripts/CourseRegister.js"></script>
+
+
+</head>
+
+<body>
+<script type="text/javascript" th:src="@{/scripts/CourseRegister.js}"
+		src="../static/scripts/CourseRegister.js"></script>
+	<!-- Menu section -->
+	<div th:replace="fragments/layout :: headermenu"></div>
+	<br>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+				<h2 th:utext="#{student.CourseReg.title}"></h2>
+				<br>
+				<div>
+					<form action="#" th:action="@{/student/course-registration/find}" method="get">
+						<input type="text" placeholder="Search.." th:value="${searchStr != null}? ${searchStr} : '' "
+							name="findCourse">
+						<button type="submit">Search</button>
+					</form>
+				</div>
+				<br>
+				<table class="table">
+					<tr>
+						<th scope="col" th:text=#{student.CourseReg.courseCode}></th>
+						<th scope="col" th:text=#{student.CourseReg.CourseTitle}></th>
+						<th scope="col" th:text=#{student.CourseReg.Description}></th>
+						<th scope="col" th:text=#{student.CourseReg.Credits}></th>
+						<th scope="col" th:text=#{student.CourseReg.Capacity}></th>
+						<th scope="col" th:text=#{student.CourseReg.Status}></th>
+						<th scope="col" th:text=#{student.CourseReg.Register}></th>
+					</tr>
+					<tr th:each="course:${courseAvailable}" class="table-row">
+						<td th:text="${course.courseCode}">ID</td>
+						<td th:text="${course.courseTitle}">ID</td>
+						<td th:text="${course.courseDescription}">ID</td>
+						<td th:text="${course.courseCredits}">ID</td>
+						<td th:text="${course.courseCapacity}">ID</td>
+						<td th:text="${course.courseStatus}">ID</td>
+						<!--
+						   	<td><a  th:href="@{/student/course-registration/register/}+${course.courseCode}" th:utext="#{student.course-registration.register}"> Register</a></td>
+						 	-->
+						<td><a th:href="'javascript:registerConfirmation(\''+${course.courseCode}+'\',\''+@{/student/course-registration/register}+'\')'"
+								th:utext="#{student.course-registration.register}" > Register</a></td>
+					</tr>
+				</table>
+
+				<div th:if="${totalPages != null and totalPages > 1}">
+					<div class="row col-sm-10">
+
+						<div class="row-sm-2">
+							Total Rows: [[${totalItems}]]
+						</div>
+						&nbsp; &nbsp;
+						<div class="row-sm-1">
+							<span th:each="i: ${#numbers.sequence(1, totalPages)}">
+								<a th:if="${currentPage != i}" th:href="@{'/student/course-registration?pageNo=' + ${i} + ${searchStr != null? '&#38;findCourse=' + searchStr:''}}">[[${i}]]</a>
+								<span th:unless="${currentPage != i}">[[${i}]]</span> &nbsp; &nbsp;
+							</span>
+						</div>
+
+						<div class="row-sm-1">
+							<a th:if="${currentPage < totalPages}"
+								th:href="@{'/student/course-registration?pageNo=' + ${currentPage + 1}  + ${searchStr != null? '&#38;findCourse=' + searchStr:''}}">Next</a>
+							<span th:unless="${currentPage < totalPages}">Next</span>
+						</div>
+						&nbsp;&nbsp;
+						<div class="row-sm-1">
+							<a th:if="${currentPage < totalPages}"
+								th:href="@{'/student/course-registration?pageNo=' + ${totalPages} + ${searchStr != null? '&#38;findCourse=' + searchStr:''}}">Last</a>
+							<span th:unless="${currentPage < totalPages}">Last</span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+
+
+
+	<div th:replace="fragments/layout :: footersection"></div>
+	<script th:inline="javascript" th:if="${successfulRegistration != null and successfulRegistration}">
+		var courseId = [[${successfulCourse}]];
+		window.onload = function () {
+			alert("You have successfully registered for " + courseId);
+		};
+	</script>
+</body>
+<footer>
+
+
+</footer>
+
+
+</html>

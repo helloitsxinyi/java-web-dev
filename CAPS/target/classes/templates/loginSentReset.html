@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>Front page for Course Application Processing System</title>
+		<!-- For input stylesheet -->
+		<!-- Using bootstrap 4.3.1 -->
+		<link th:rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css} "/>
+		<link th:rel="stylesheet" th:href="@{/fontawesome/css/all.min.css} "/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/loginpage.css}"/>
+		<script type="text/javascript" th:src="@{/scripts/home.js}" src="../static/scripts/home.js"></script>
+	</head>
+	
+	<body>
+		<!-- Menu section -->
+		<div th:replace="fragments/layout :: headermenu"></div>
+		<br>
+		<div class="container">
+			<div class="row">
+				<div class="col-4 login-side">
+					<p th:text=#{login.title.row1}></p>
+					<p th:text=#{login.title.row2}></p>
+					<p th:text=#{login.title.row3}></p>
+					<p th:text=#{login.title.row4}></p>
+				</div>
+				<div class="col-8 login-input">
+					
+					
+					<div class="row">
+							<div ><b>Reset Request Sent</b></div>
+					</div>
+					<br>
+					<div class="row">
+							<div><p class="reset-txt">Please check your email</p></div>
+					</div>
+					<div class="row">
+							<div><p class="reset-txt"><a th:href="@{/login}">Return</a></p></div>
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+		
+		<div th:replace="fragments/layout :: footersection"></div>
+	</body>
+	
+
+</html>

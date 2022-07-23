@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head th:fragment="headsection">
+	<title>Course Application Processing System</title>
+	<!-- For input stylesheet -->
+	<!-- Using bootstrap 4.3.1 -->
+	<link th:rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css} " />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" href="../static/css/home.css" />
+	<script type="text/javascript" th:src="@{/scripts/home.js}" src="../static/scripts/home.js"></script>
+</head>
+
+<body>
+
+	<div th:fragment="headermenu">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/navigation-menu.css}" />
+
+		<nav class="navbar navbar-expand-md navbar-light bg-light firstmenu">
+			<a class="navbar-brand" th:href="@{/home}">CAPS</a>
+
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item" th:if="${NavMenu != null}">
+					Welcome,&nbsp
+					<em th:utext="${NavMenu.name}"></em>&nbsp
+					[<em th:utext=${NavMenu.role}></em>]
+				</li>
+				<li>&nbsp</li>
+				<li class="nav-item">
+
+					<a class="nav-link" th:href="@{/login}" th:if="${NavMenu == null}">Login</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div th:if="${NavMenu != null}">
+			<div th:if="${#strings.equals(NavMenu.role, 'ADMIN')}">
+				<!-- Menu for Admin -->
+
+				<nav class="navbar navbar-expand-sm navbar-light bg-light">
+
+					<div class="navbar-collapse collapse justify-content-center secondmenu">
+						<ul class="navbar-nav">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle"
+									th:href="@{/manage/student/view}">Manage&nbspStudents</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" th:href="@{/manage/student/view}">View Students</a>
+									</li>
+									<li>
+										<a class="dropdown-item" th:href="@{/manage/student/create}">Enroll Student</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle"
+									th:href="@{/manage/lecturer/list}">Manage&nbspLecturers</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" th:href="@{/manage/lecturer/list}">View Lecturers</a>
+									</li>
+									<li>
+										<a class="dropdown-item" th:href="@{/manage/lecturer/create}">Create
+											Lecturer</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle"
+									th:href="@{/manage/course/list}">Manage&nbspCourses</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="dropdown-item" th:href="@{/manage/course/list}">View Courses</a>
+									</li>
+									<li>
+										<a class="dropdown-item" th:href="@{${ReactLink} + '/manage/course/create'}">Create Courses</a>
+									</li>
+									<li>
+										<a class="dropdown-item" th:href="@{${ReactLink} + '/manage/course/courselecturer'}">Assign Lecturers</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/manage/studentcourse/view}">Manage Course Enrollment</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/logout}">Log&nbspOut</a>
+							</li>
+						</ul>
+					</div>
+
+				</nav>
+
+			</div>
+
+			<div th:if="${#strings.equals(NavMenu.role, 'STUDENT')}">
+				<!-- Menu for Student -->
+				<nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-center secondmenu">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/student/profile}">Profile</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/student/grades}">Grades and GPA</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/student/courses}">View Courses</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/student/course-registration}">Enroll for a Course</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" th:href="@{/logout}">Log&nbspOut</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div th:if="${#strings.equals(NavMenu.role, 'LECTURER')}">
+				<!-- Menu for Lecturer -->
+				<nav class="navbar navbar-expand-sm navbar-light bg-light">
+					<div class="navbar-collapse collapse justify-content-center secondmenu">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/lecturer/list-courses}">View Courses Taught</a>
+								<!--<a class="nav-link" th:href="@{/viewCoursesTaught}">View Courses Taught</a>-->
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/lecturer/course-enrollment}">View Courses Enrollment</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/lecturer/grade-course}">Grade a Course</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/lecturer/student-performance}">View Student Performance</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" th:href="@{/logout}">Log&nbspOut</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+
+	<div th:fragment="footersectionold">
+	</div>
+
+	<footer class="text-center py-4 text-muted" th:fragment="footersection">
+		Course Application Processing System CAPS Copyright&copy; 2022
+	</footer>
+
+</body>
+
+</html>

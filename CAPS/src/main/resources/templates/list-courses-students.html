@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/layout.html :: headsection"></head>
+
+<body>
+	<header th:replace="fragments/layout.html :: headermenu"></header>
+	<!-- <div th:replace="fragments/layout.html :: Anotherheadermenu"> -->
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-1"></div>
+			<div class="col-10">
+			<br/>
+			<h2 th:if="${!studentPerformance}"  th:utext="#{course.student.list.title}"></h2>
+			<h2 th:if="${studentPerformance}"  th:utext="#{course.student.perfomance.title}"></h2>
+			</br>
+			<h4 th:text=${c.courseCode}></h4> 
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th scope="col" th:text=#{course.student.list.studentId}></th>
+	      <th scope="col" th:text=#{course.student.list.firstName}></th>
+	      <th scope="col" th:text=#{course.student.list.lastName}></th>
+	      <th scope="col" th:text=#{course.student.list.score}></th>
+	      <th scope="col" th:text=#{course.student.list.grade}></th>
+	      <th scope="col" th:text=#{course.student.list.status}></th>
+	      <th th:if="${!studentPerformance}" scope="col" th:text=#{course.student.list.action}></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr th:each="courseStudent:${courseStudentList}">
+	      <td >
+	      <a th:if="${studentPerformance}" th:href="@{/lecturer/student-profile/}+${courseStudent.student.studentId}" th:text=${courseStudent.student.studentId}> </a>
+	      <a th:if="${!studentPerformance}" th:text=${courseStudent.student.studentId}> </a>
+	      </td>
+	      <td th:text=${courseStudent.student.firstName}></td>
+	      <td th:text=${courseStudent.student.lastName}></td>
+	      <td th:text=${courseStudent.score}></td>
+	      <td th:text=${courseStudent.grade}></td>
+	      <td th:text=${courseStudent.courseStudentStatus}></td>
+	      <td th:if="*{courseStudent.grade} != null and ${!studentPerformance}"><a href="courseStudent-form.html" th:href="@{/lecturer/add-score/}+${courseStudent.courseStudentId}">Edit Score</a></td>
+	      <td th:if="*{courseStudent.grade} == null and ${!studentPerformance}"><a href="courseStudent-form.html" th:href="@{/lecturer/add-score/}+${courseStudent.courseStudentId}">Add Score</a></td>
+	    </tr>
+	  </tbody>
+</table>
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+</body>
+
+<div th:replace="fragments/layout.html :: footersection"></div>
+
+</html>

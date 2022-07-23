@@ -1,0 +1,38 @@
+[
+  {
+    "lecturerId": 1,
+    "email": "capscp@sa54team4.com",
+    "firstName": "Chandrasekaran",
+    "lastName": "Paramasivam",
+    "role": "LECTURER",
+    "user_status": "ACTIVE",
+    "username": "chandra"
+  },
+  {
+    "lecturerId": 2,
+    "email": "capscyk@sa54team4.com",
+    "firstName": "Yuen Kwan",
+    "lastName": "Chia",
+    "role": "LECTURER",
+    "user_status": "ACTIVE",
+    "username": "yuenkwan"
+  },
+  {
+    "lecturerId": 3,
+    "email": "capsdn@sa54team4.com",
+    "firstName": "Darryl",
+    "lastName": "Ng",
+    "role": "LECTURER",
+    "user_status": "ACTIVE",
+    "username": "darrylng"
+  },
+  {
+    "lecturerId": 4,
+    "email": "capset@sa54team4.com",
+    "firstName": "Esther",
+    "lastName": "Tan",
+    "role": "LECTURER",
+    "user_status": "ACTIVE",
+    "username": "esthertan"
+  }
+]

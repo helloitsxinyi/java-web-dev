@@ -1,0 +1,37 @@
+  
+  .firstmenu {
+  background-color: #ffffff;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 14px;
+  }
+  
+  .secondmenu a:hover {
+  color: #000000;
+  font-weight: bold;
+  }
+
+  .secondmenu {
+  margin: 10px;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);	
+  }
+  
+  .navbar-expand-sm .navbar-nav .nav-link{
+	padding-right: 2.5rem;
+}
+
+.app-title{
+	font-weight:bold;
+	font-size:20px;
+}
+
+.navbar .nav-item .dropdown-menu{ 
+	display: none; 
+}
+
+.navbar .nav-item:hover .dropdown-menu{ 
+	display: block; 
+}
+
+.navbar .nav-item .dropdown-menu{ margin-top:0; }
