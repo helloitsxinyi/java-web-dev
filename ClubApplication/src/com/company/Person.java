@@ -1,14 +1,26 @@
 package com.company;
 
 public class Person {
-    private String surname;
     private String firstName;
     private String secondName;
+    private String surname;
 
     public Person(String surname, String firstName, String secondName) {
-        this.surname = surname;
         this.firstName = firstName;
         this.secondName = secondName;
+        this.surname = surname;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public String getSurname() {
+        return surname;
     }
 
     public void show() {
@@ -24,22 +36,4 @@ public class Person {
         name += " " + surname;
         return name;
     }
-
-
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getSecondName() {
-        return secondName;
-    }
-
-
-
-
 }

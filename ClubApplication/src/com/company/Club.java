@@ -1,73 +1,69 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class Club {
-    private int membershipNumber = 0 ;
 
-    private List<Member> members = new ArrayList<>();
-    private Map<String, Facility> facilities = new HashMap<>();
+//    private int memberNumber;
+//    private Member[] memberArr;
+//
+//    public Club() {
+//        memberNumber = 1;
+//        memberArr = new Member[5];
+//    }
+//
+//    public Member addMember(String surname, String firstName, String secondName) {
+//        ensureArrSize();
+//        Member newMember = new Member(surname, firstName, secondName, memberNumber);
+//
+//        memberArr[memberNumber] = newMember;
+//        memberNumber+=1;
+//        return newMember;
+//    }
+//
+//    private void ensureArrSize() {
+//        if (memberNumber == memberArr.length) {
+//            int newSize = memberArr.length * 2;
+//            Member[] newMembers = new Member[newSize];
+//
+//            for (int i = 0; i < memberNumber; i++) {
+//                newMembers[i] = memberArr[i];
+//            }
+//            memberArr = newMembers;
+//        }
+//    }
+//
+//    public void showMembers() {
+//        for (Member m: memberArr) {
+//            if (m != null) {
+//                m.show();
+//            }
+//        }
+//    }
+//
+//    public void removeMember(int memberNumber) {
+//        // why if (membershipNumber >= 1 && membershipNumber <= this.membershipNumber - 1) ??
+//        memberArr[memberNumber] = null;
+//    }
 
-    public List<Member> getMembers() {
-        return members;
+    private int memberNumber = 1;
+    ArrayList<Member> memberArrayList = new ArrayList<>();
+
+    public Member addMember(String surname, String firstName, String secondName) {
+        Member newMember = new Member(surname, firstName, secondName, memberNumber);
+        memberArrayList.add(newMember);
+        memberNumber += 1;
+        return newMember;
     }
 
-    public Map<String, Facility> getFacilities() {
-        return facilities;
-    }
-    public Club() {
+    public void removeMember(int memberNumber) {
+        memberArrayList.remove(memberNumber);
     }
 
     public void showMembers() {
-
-        for (Member mem : members) {
-            mem.show();
+        for (Member m : memberArrayList) {
+            m.show();
         }
     }
 
-    public void addMember(String surname, String firstName, String secondName) {
-        membershipNumber += 1;
-        members.add(new Member(surname, firstName, secondName, membershipNumber));
-    }
-
-    public void removeMember(int membershipNumber) {
-//        //simple iterator method
-//        members.removeIf(member -> member.getMemberNumber() == membershipNumber);
-        members.remove(findMember(membershipNumber));
-    }
-
-    public Member findMember(int membershipNumber) {
-        for (Member mem: members) {
-            if (mem.getMemberNumber() == membershipNumber) {
-                return mem;
-            }
-        }
-        return null;
-    }
-
-    public void addFacility(String name, String desc) {
-        facilities.put(name, new Facility(name, desc));
-    }
-
-    public Facility getFacility(String name){
-        return facilities.get(name);
-    }
-
-    public void removeFacility(String name) {
-        facilities.remove(name);
-    }
-
-    public void showFacilities() {
-        facilities.forEach((key,value)-> getFacility(key).show());
-    }
-
-    public void show() {
-        System.out.println("Facilities: \n");
-        showFacilities();
-        System.out.println("Members: \n");
-        showMembers();
-    }
 }

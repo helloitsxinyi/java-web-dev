@@ -4,27 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce66d17d-d26f-4af8-bf0e-505b5fcf13b4" name="Changes" comment="remove comment about array in clubarraylist">
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/ClubManager-whsp2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/bin/club/ClubApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/bin/club/Facility.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/bin/club/Person.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/src/club/ClubApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/src/club/Facility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ClubManagerSoln/src/club/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test/com/company/Club.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test/com/company/Club.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test/com/company/ClubApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test/com/company/ClubApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Test/com/company/ClubArrayList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Test/com/company/ClubArrayList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ClubApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ClubApplication.java" afterDir="false" />
+    <list default="true" id="b5df8fa2-83ef-4536-8b91-5e334e64299a" name="Changes" comment="add streams and functional programming workshop">
+      <change beforePath="$PROJECT_DIR$/../../ClassQuiz/src/iss/persistent/Employee.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,104 +15,80 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="21a7Bo0drVHOeX9sfhIXQNJ1uG6" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
-  </component>
+  <component name="ProjectId" id="29jECBGzf9ysBRFKyAHpQFdN5ZV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="inlay.hints.JAVA" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.company" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+  <component name="RunManager" selected="Application.StreamWshop">
+    <configuration name="ClubApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.company.ClubApplication" />
-      <module name="Test" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <module name="ClubApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
-      <module name="Test" />
+    <configuration name="Generics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Generics" />
+      <module name="ClubApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GenericsTask2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.GenericsTask2" />
+      <module name="ClubApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StreamWshop" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.StreamWshop" />
+      <module name="ClubApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.company.*" />
@@ -144,150 +101,82 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.StreamWshop" />
+        <item itemvalue="Application.ClubApplication" />
+        <item itemvalue="Application.Generics" />
+        <item itemvalue="Application.GenericsTask2" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ce66d17d-d26f-4af8-bf0e-505b5fcf13b4" name="Changes" comment="" />
-      <created>1638167213639</created>
+      <changelist id="b5df8fa2-83ef-4536-8b91-5e334e64299a" name="Changes" comment="" />
+      <created>1653617964863</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1638167213639</updated>
-      <workItem from="1638167215097" duration="2871000" />
-      <workItem from="1638171245536" duration="5147000" />
-      <workItem from="1638245035828" duration="12226000" />
-      <workItem from="1638367863946" duration="25000" />
+      <updated>1653617964863</updated>
+      <workItem from="1653617966205" duration="110000" />
+      <workItem from="1653618442456" duration="2455000" />
+      <workItem from="1653637934855" duration="3079000" />
+      <workItem from="1653894749596" duration="3731000" />
+      <workItem from="1654045630201" duration="2634000" />
+      <workItem from="1654049018822" duration="6561000" />
+      <workItem from="1654138692733" duration="5341000" />
+      <workItem from="1654225846712" duration="598000" />
+      <workItem from="1654236922447" duration="1030000" />
+      <workItem from="1654239239049" duration="605000" />
     </task>
-    <task id="LOCAL-00001" summary="add ClubApplication class">
-      <created>1638167658908</created>
+    <task id="LOCAL-00001" summary="add files for 2022">
+      <created>1653638265237</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1638167658908</updated>
+      <updated>1653638265237</updated>
     </task>
-    <task id="LOCAL-00002" summary="add facility, person classes, delete main class">
-      <created>1638172991334</created>
+    <task id="LOCAL-00002" summary="add files for 2022">
+      <created>1653638304833</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1638172991335</updated>
+      <updated>1653638304833</updated>
     </task>
-    <task id="LOCAL-00003" summary="add member class and modify Facility.show and Person.show">
-      <created>1638175835592</created>
+    <task id="LOCAL-00003" summary="add generics files">
+      <created>1653898257059</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1638175835592</updated>
+      <updated>1653898257059</updated>
     </task>
-    <task id="LOCAL-00004" summary="add Club class and test methods to display members in club">
-      <created>1638252946261</created>
+    <task id="LOCAL-00004" summary="fixed GenericsTask2 solution">
+      <created>1653898626403</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1638252946261</updated>
+      <updated>1653898626403</updated>
     </task>
-    <task id="LOCAL-00005" summary="add showMembers method in club and test">
-      <created>1638253728069</created>
+    <task id="LOCAL-00005" summary="add Club and update Person and Member classes">
+      <created>1654063880153</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1638253728069</updated>
+      <updated>1654063880153</updated>
     </task>
-    <task id="LOCAL-00006" summary="add removemember method with array resizing">
-      <created>1638255410483</created>
+    <task id="LOCAL-00006" summary="update club with arrays and ClubApplication.java">
+      <created>1654070008638</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1638255410483</updated>
+      <updated>1654070008638</updated>
     </task>
-    <task id="LOCAL-00007" summary="update addMember method to change with removal of members, add tests in main">
-      <created>1638255901015</created>
+    <task id="LOCAL-00007" summary="add streams and functional programming workshop">
+      <created>1654149883575</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1638255901015</updated>
+      <updated>1654149883575</updated>
     </task>
-    <task id="LOCAL-00008" summary="===== LEARNING POINT: Arrays. See: Club.java and ClubApplication.java (Main) =====">
-      <created>1638256160118</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1638256160118</updated>
-    </task>
-    <task id="LOCAL-00009" summary="===== LEARNING POINT: Arrays. See: Club.java and ClubApplication.java (Main) [rearranged code] =====">
-      <created>1638256404932</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1638256404932</updated>
-    </task>
-    <task id="LOCAL-00010" summary="update addMember method to use arrayList instead of array">
-      <created>1638256691895</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1638256691895</updated>
-    </task>
-    <task id="LOCAL-00011" summary="update naming of memNo to index for old removeMember method for clarity">
-      <created>1638256820698</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1638256820698</updated>
-    </task>
-    <task id="LOCAL-00012" summary="update removeMember method to use arrayList instead of array, update tests in main">
-      <created>1638257187066</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1638257187066</updated>
-    </task>
-    <task id="LOCAL-00013" summary="add findMember,update removeMember to use findMember">
-      <created>1638257406555</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1638257406555</updated>
-    </task>
-    <task id="LOCAL-00014" summary="split club into specific classes with naming to show data types">
-      <created>1638257977896</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1638257977896</updated>
-    </task>
-    <task id="LOCAL-00015" summary="clean up code">
-      <created>1638257995717</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1638257995717</updated>
-    </task>
-    <task id="LOCAL-00016" summary="update explanation for club array code">
-      <created>1638259228230</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1638259228230</updated>
-    </task>
-    <task id="LOCAL-00017" summary="add facility functions (showFac, removeFac, addFac, getFac, show) and test cases in main">
-      <created>1638261341247</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1638261341247</updated>
-    </task>
-    <task id="LOCAL-00018" summary="remove comment about array in clubarraylist">
-      <created>1638261366925</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1638261366925</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,26 +195,31 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add ClubApplication class" />
-    <MESSAGE value="add facility, person classes, delete main class" />
-    <MESSAGE value="add member class and modify Facility.show and Person.show" />
-    <MESSAGE value="add Club class and test methods to display members in club" />
-    <MESSAGE value="add showMembers method in club and test" />
-    <MESSAGE value="add removemember method with array resizing" />
-    <MESSAGE value="update addMember method to change with removal of members, add tests in main" />
-    <MESSAGE value="LEARNING POINT: Arrays. See: Club.java and ClubApplication.java (Main_" />
-    <MESSAGE value="===== LEARNING POINT: Arrays. See: Club.java and ClubApplication.java (Main) =====" />
-    <MESSAGE value="===== LEARNING POINT: Arrays. See: Club.java and ClubApplication.java (Main) [rearranged code] =====" />
-    <MESSAGE value="update addMember method to use arrayList instead of array" />
-    <MESSAGE value="update naming of memNo to index for old removeMember method for clarity" />
-    <MESSAGE value="update removeMember method to use arrayList instead of array, update tests in main" />
-    <MESSAGE value="add findMember,update removeMember to use findMember" />
-    <MESSAGE value="split club into specific classes with naming to show data types" />
-    <MESSAGE value="clean up code" />
-    <MESSAGE value="update explanation for club array code" />
-    <MESSAGE value="add facility functions (showFac, removeFac, addFac, getFac, show) and test cases in main" />
-    <MESSAGE value="remove comment about array in clubarraylist" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove comment about array in clubarraylist" />
+    <MESSAGE value="add files for 2022" />
+    <MESSAGE value="add generics files" />
+    <MESSAGE value="fixed GenericsTask2 solution" />
+    <MESSAGE value="add Club and update Person and Member classes" />
+    <MESSAGE value="update club with arrays and ClubApplication.java" />
+    <MESSAGE value="add streams and functional programming workshop" />
+    <option name="LAST_COMMIT_MESSAGE" value="add streams and functional programming workshop" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ClubApplication$GenericsTask2.ic" NAME="GenericsTask2 Coverage Results" MODIFIED="1653898399987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.company.*</FILTER>
+    </SUITE>
   </component>
 </project>
